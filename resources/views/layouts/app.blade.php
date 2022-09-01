@@ -76,5 +76,9 @@
             @yield('content')
         </main>
     </div>
+
+    <section>
+        @include('partials.footer')
+    </section>
 </body>
 </html>

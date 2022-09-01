@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('mailings', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('title');
-            $table->string('location');
-            $table->string('size');
-            $table->text('description');
-            $table->unsignedInteger('price');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('mailings');
     }
 };

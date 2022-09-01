@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//pages cONTROLLER
-
+//pages controller
+Route::get('/contact', [\App\Http\Controllers\PagesController::class, 'contactPage'])->name('contact');
+Route::get('/about-us', [\App\Http\Controllers\PagesController::class, 'aboutPage'])->name('about');
+Route::post('/store-mail', [\App\Http\Controllers\PagesController::class, 'storeEmails'])->name('store.mail');
 
 //posts controller
 Route::get('/', [\App\Http\Controllers\PostsController::class, 'index'])->name('home');
