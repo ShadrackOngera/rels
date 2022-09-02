@@ -94,8 +94,8 @@ class PostsController extends Controller
     {
         //edit a post
 
-
-        return view('posts.edit');
+        return view('posts.edit')
+            ->with('post', Post::where('slug', $slug)->first());
     }
 
     /**
@@ -119,5 +119,8 @@ class PostsController extends Controller
     public function destroy($slug)
     {
         //
+        $post = Post::where('slug', $slug)->delete();
+
+        return redirect('/blog');
     }
 }

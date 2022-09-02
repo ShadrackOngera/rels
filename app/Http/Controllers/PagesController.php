@@ -23,7 +23,7 @@ class PagesController extends Controller
             'email' => 'required'
         ]);
 
-        $post = MailingList::create([
+        $mailinglist = MailingList::create([
             'email' => $request->input('email'),
         ]);
 

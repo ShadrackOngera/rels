@@ -6,11 +6,11 @@
                 <div class="align-items-center">
                     <h5>Join Our Mailing List</h5>
                     <div class="input-group mb-3">
-                        @csrf
-                        <form action="{{ route('store.mail') }}">
-                            <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                                S
+                        <form action="{{ route('store.mail') }}" method="POST">
+                            @csrf
+                            <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" name="email" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+                                Submit
                             </button>
                         </form>
                     </div>

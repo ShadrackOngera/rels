@@ -19,7 +19,7 @@ Route::post('/store-mail', [\App\Http\Controllers\PagesController::class, 'store
 
 //posts controller
 Route::get('/', [\App\Http\Controllers\PostsController::class, 'index'])->name('home');
-Route::get('/show', [\App\Http\Controllers\PostsController::class, 'show'])->name('show.post');
+Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('show.post');
 Route::get('/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('edit.post');
 Route::get('/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
 Route::post('/store', [\App\Http\Controllers\PostsController::class, 'store'])->name('store.post');

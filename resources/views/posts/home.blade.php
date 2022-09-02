@@ -23,7 +23,7 @@
             <div class="row">
                 @foreach($posts as $post)
                     <div class="col-sm-6">
-                        <div class="card h-100">
+                        <div class="card shadow h-100">
                             <div class="card-body">
                                 <div class="row mb-3">
                                     <div class="col-sm-6">
@@ -32,13 +32,16 @@
                                         <h5 class="">Size: {{ $post->size }}</h5>
                                         <h6>Posted By {{ $post->user->name }}</h6>
                                         <h6>Ksh. {{ $post->price }}</h6>
-                                        <small>Published on <span class="fw-bold">{{ date('jS M Y', strtotime($post->updated_at)) }}</span></small>
+                                        <small>Published on <span class="fw-bold">{{ date('jS M Y', strtotime($post->updated_at)) }}</span></small><br>
+                                        <span>
+                                            Title deed: Yes
+                                        </span>
                                     </div>
                                     <div class="col-sm-6">
                                         <img src="{{ asset('images/pics/meru-land.jpg') }}" alt="Girl in a jacket" class="rounded-3 img-fluid">
                                     </div>
                                 </div>
-                                <a href="/post/{{ $post->slug }}" class="btn btn-info w-100 text-white mb-3">read more</a>
+                                <a href="{{ route('show.post') }}" class="btn btn-info w-100 text-white mb-3">read more</a>
                                 @if(isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                                     <div class="row">
                                         <div class="col-sm-6 mb-3">
