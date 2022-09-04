@@ -23,9 +23,14 @@
                 <label for="floatingInput">Land Size</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="price" placeholder="Outright Price">
+                <input type="number" class="form-control" id="floatingInput" name="price" placeholder="Outright Price">
                 <label for="floatingInput">Outright Price</label>
             </div>
+            <select class="form-select mb-3 py-3" aria-label="Default select example" name="deed">
+                <option selected>Do you have a title deed for this land?</option>
+                <option value="1">Yes</option>
+                <option value="2">No</option>
+            </select>
             <div class="form-floating mb-3">
                 <textarea class="form-control" placeholder="Description" name="description" id="floatingTextarea2" style="height: 200px"></textarea>
                 <label for="floatingTextarea2">Description</label>

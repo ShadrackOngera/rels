@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Notification;
 class PostsController extends Controller
 {
 
-    public function _construct(){
+    public function __construct(){
         $this->middleware('auth', ['except' =>['index', 'show']]);
     }
     /**
@@ -51,7 +51,8 @@ class PostsController extends Controller
             'description' => 'required',
             'location' => 'required',
             'size' => 'required',
-            'price' => 'required'
+            'deed' => 'required',
+            'price' => ['required','min:1'],
         ]);
 
 //        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
@@ -63,6 +64,7 @@ class PostsController extends Controller
             'location' => $request->input('location'),
             'size' => $request->input('size'),
             'price' => $request->input('price'),
+            'deed' => $request->input('deed'),
             'user_id' => auth()->user()->id
         ]);
 
