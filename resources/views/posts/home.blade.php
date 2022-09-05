@@ -24,7 +24,7 @@
                 @foreach($posts as $post)
                     <div class="col-sm-6 mb-4">
                         <div class="card shadow h-100">
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column justify-content-between">
                                 <div class="row mb-3">
                                     <div class="col-sm-6">
                                         <h2 class="mb-3">{{ $post->title }}</h2>
@@ -41,35 +41,55 @@
                                                 <span>No</span>
                                             @endif
                                         </div>
+                                        <div>
+                                            <span>Sold By </span>
+                                            @if($post->type == 1)
+                                                <span>the owner</span>
+                                            @else
+                                                <span>a Broker</span>
+                                            @endif
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <img src="{{ asset('images/pics/meru-land.jpg') }}" alt="Girl in a jacket" class="rounded-3 img-fluid">
                                     </div>
                                 </div>
-                                <a href="#" class="btn btn-info w-100 text-white mb-3">read more</a>
-                                @if(isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                                    <div class="row">
-                                        <div class="col-sm-6 mb-3">
-                                            <div class="d-grid gap-2">
-                                                <a href="/blog/{{ $post->slug }}/edit" class="btn btn-primary text-white">
-                                                    Edit
-                                                </a>
+                                <div>
+                                    <a href="{{ route('posts.show', $post->slug)  }}" class="btn btn-info w-100 text-white mb-3">View Offer</a>
+                                    @if(isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                                        <div class="row">
+                                            <div class="col-sm-4 mb-3">
+                                                <div class="d-grid gap-2">
+                                                    <a href="{{ route('posts.edit', $post->slug)  }}" class="btn btn-primary text-white">
+                                                        Edit
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 mb-3">
+                                                <div class="d-grid gap-2 text-center">
+                                                    <a href="#" class="btn btn-primary text-white position-relative">
+                                                        New Messages
+                                                        <span class=" badge rounded-2 ms-3 py-2 bg-success fw-bold">
+                                                            0
+                                                            <span class="visually-hidden">unread messages</span>
+                                                          </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <form action="{{route('posts.destroy',$post->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <div class="d-grid gap-2">
+                                                        <button class="btn btn-danger">
+                                                            Delete
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <form action="/blog/{{ $post->slug }}" method="POST">
-                                                @csrf
-                                                @method('delete')
-
-                                                <div class="d-grid gap-2">
-                                                    <button class="btn btn-danger">
-                                                        Delete
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>

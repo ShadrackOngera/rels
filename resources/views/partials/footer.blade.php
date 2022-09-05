@@ -4,14 +4,19 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="align-items-center">
-                    <h5>Join Our Mailing List</h5>
+                    <div class="py-3"></div>
+                    <h5 class="text-white">Join Our Mailing List</h5>
                     <div class="input-group mb-3">
                         <form action="{{ route('store.mail') }}" method="POST">
                             @csrf
-                            <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" name="email" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
-                                Submit
-                            </button>
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" name="email" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary text-white" type="submit" id="button-addon2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                                            <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+                                        </svg>
+                                    </button>
+                                </div>
                         </form>
                     </div>
                 </div>

@@ -3,12 +3,12 @@
     <div>
         <div class="container">
             <div class="text-center text-uppercase">
-                <h1>Create Post</h1>
+                <h1>Create Offer</h1>
             </div>
         </div>
     </div>
     <div class="container">
-        <form action="{{ route('store.post') }}" method="POST" class="mb-3">
+        <form action="{{ route('posts') }}" method="POST" class="mb-3">
             @csrf
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="title" placeholder="Title">
@@ -30,6 +30,11 @@
                 <option selected>Do you have a title deed for this land?</option>
                 <option value="1">Yes</option>
                 <option value="2">No</option>
+            </select>
+            <select class="form-select mb-3 py-3" aria-label="Default select example" name="type">
+                <option selected>I'm ...</option>
+                <option value="1">The Owner</option>
+                <option value="2">a Broker</option>
             </select>
             <div class="form-floating mb-3">
                 <textarea class="form-control" placeholder="Description" name="description" id="floatingTextarea2" style="height: 200px"></textarea>

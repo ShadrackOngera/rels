@@ -52,6 +52,7 @@ class PostsController extends Controller
             'location' => 'required',
             'size' => 'required',
             'deed' => 'required',
+            'type' => 'required',
             'price' => ['required','min:1'],
         ]);
 
@@ -65,6 +66,7 @@ class PostsController extends Controller
             'size' => $request->input('size'),
             'price' => $request->input('price'),
             'deed' => $request->input('deed'),
+            'type' => $request->input('type'),
             'user_id' => auth()->user()->id
         ]);
 
@@ -89,10 +91,10 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $slug
+     * @param  string  $slug
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit($slug)
+    public function edit(Request $slug)
     {
         //edit a post
 
@@ -104,7 +106,7 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $slug
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $slug)
@@ -115,14 +117,15 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $slug
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
+    public function destroy($id)
     {
         //
-        $post = Post::where('slug', $slug)->delete();
+        $post = Post::where('id', $id)->delete();
+//        echo 'Successfully deleted';
 
-        return redirect('/blog');
+        return redirect('/');
     }
 }

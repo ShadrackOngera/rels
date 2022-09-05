@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('description');
             $table->unsignedInteger('price');
             $table->boolean('deed');
+            $table->boolean('type');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
