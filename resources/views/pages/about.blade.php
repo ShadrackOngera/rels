@@ -1,17 +1,17 @@
 @extends('layouts.app')
 @section('content')
-    <div class="py-4"></div>
-    <div>
+    <div class="banner-about mb-5">
+        <div class="py-4"></div>
         <div class="container">
-            <div class="align-self-center text-center">
+            <div class="align-self-center text-center text-indigo">
                 <h1>About Real Estate Listing System</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, voluptatem!
                 </p>
             </div>
         </div>
+        <div class="py-4"></div>
     </div>
-    <div class="py-5"></div>
     <div class="bg-primary-fade">
         <div class="container">
             <div class="row">
@@ -75,4 +75,5 @@
             </div>
         </div>
     </div>
+    <div class="py-5"></div>
 @endsection
