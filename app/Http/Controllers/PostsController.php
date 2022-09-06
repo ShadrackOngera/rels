@@ -67,7 +67,7 @@ class PostsController extends Controller
             'price' => $request->input('price'),
             'deed' => $request->input('deed'),
             'type' => $request->input('type'),
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
         ]);
 
 

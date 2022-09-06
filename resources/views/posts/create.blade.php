@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="container">
-        <form action="{{ route('posts') }}" method="POST" class="mb-3">
+        <form action="{{ route('posts.store') }}" method="POST" class="mb-3">
             @csrf
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="title" placeholder="Title">
