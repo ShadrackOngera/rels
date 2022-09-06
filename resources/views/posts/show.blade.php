@@ -3,7 +3,7 @@
     <div class="banner-show">
         <div class="container">
             <div class="text-center text-uppercase align-self-center">
-                <h2 class="text-white py-5 fw-bold">{{ $post->title }}</h2>
+                <h2 class="text-indigo py-5 fw-bolder">{{ $post->title }}</h2>
                 <hr>
             </div>
         </div>
