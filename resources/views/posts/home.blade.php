@@ -27,7 +27,7 @@
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <div class="row mb-3">
                                     <div class="col-sm-6">
-                                        <h2 class="mb-3">{{ $post->title }}</h2>
+                                        <h2 class="mb-3 text-capitalize">{{ $post->title }}</h2>
                                         <h4 class="">Location: {{ $post->location }}</h4>
                                         <h5 class="">Size: {{ $post->size }}</h5>
                                         <h6>Posted By {{ $post->user->name }}</h6>
@@ -50,8 +50,10 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <img src="{{ asset('images/pics/meru-land.jpg') }}" alt="Girl in a jacket" class="rounded-3 img-fluid">
+                                    <div class="col-sm-6 banner-land position-relative rounded-3">
+                                        <div class="position-absolute top-50 start-50 translate-middle">
+                                            <h4 class="text-capitalize">{{ $post->title }}</h4>
+                                        </div>
                                     </div>
                                 </div>
                                 <div>
