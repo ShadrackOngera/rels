@@ -22,6 +22,7 @@ Route::get('/', [\App\Http\Controllers\PostsController::class, 'index'])->name('
 Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 Route::get('/posts/{slug}/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
 Route::get('/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
+Route::put('/post-update', [\App\Http\Controllers\PostsController::class, 'update'])->name('update.post');
 Route::post('/posts', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
 //Route::post('/delete/{id}', [\App\Http\Controllers\PostsController::class, 'destroy'])->name('posts.delete');
 Route::resource('posts', \App\Http\Controllers\PostsController::class);

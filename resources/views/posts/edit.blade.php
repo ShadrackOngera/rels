@@ -4,7 +4,7 @@
     <div>
         <div class="container">
             <div class="container">
-                <form action="{{ route('posts.edit', $post->slug) }}" method="POST" class="mb-3">
+                <form action="{{ route('update.post', $post->slug) }}" method="POST" class="mb-3">
                     @csrf
                     @method('PUT')
                     <div class="form-floating mb-3">
@@ -45,7 +45,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <a href="#" class="btn btn-primary text-white w-100">Back</a>
+                            <a href="{{ route('posts.show', $post->slug)  }}" class="btn btn-primary text-white w-100">Back</a>
                         </div>
                         <div class="col-sm-6">
                             <a href="/" class="btn btn-info text-white w-100">Home Page</a>

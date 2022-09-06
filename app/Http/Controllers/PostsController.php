@@ -94,7 +94,7 @@ class PostsController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Request $slug)
+    public function edit($slug)
     {
         //edit a post
 
@@ -107,11 +107,24 @@ class PostsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  string  $slug
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $slug)
     {
-        //
+        Post::where('slug', $slug)
+            ->update([
+                'title' => $request->input('title'),
+                'description' => $request->input('description'),
+                'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
+                'location' => $request->input('location'),
+                'size' => $request->input('size'),
+                'price' => $request->input('price'),
+                'deed' => $request->input('deed'),
+                'type' => $request->input('type'),
+                'user_id' => auth()->user()->id,
+            ]);
+
+        return redirect('/');
     }
 
     /**

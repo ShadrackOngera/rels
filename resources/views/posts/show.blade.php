@@ -37,9 +37,29 @@
                 {!! nl2br(e($post->description)) !!}
             </p>
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
+        <div class="d-grid gap-2 col-6 mx-auto mb-3">
             <a href="{{ route('home') }}" class="btn btn-info text-white">Back</a>
         </div>
+        @if(isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                    <div class="d-grid gap-2">
+                        <a href="{{ route('posts.edit', $post->slug)  }}" class="btn btn-primary text-white">
+                            Edit
+                        </a>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                    <form action="{{route('posts.destroy',$post->id)}}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-danger">
+                                Delete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        @endif
     </div>
     <div></div>
 @endsection
