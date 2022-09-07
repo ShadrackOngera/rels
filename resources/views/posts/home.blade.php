@@ -26,11 +26,11 @@
                         <div class="card shadow h-100">
                             <div class="card-body d-flex flex-column justify-content-between">
                                 <div class="row mb-3">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 mb-3">
                                         <h2 class="mb-3 text-capitalize">{{ $post->title }}</h2>
                                         <h4 class="">Location: {{ $post->location }}</h4>
                                         <h5 class="">Size: {{ $post->size }}</h5>
-                                        <h6>Posted By {{ $post->user->name }}</h6>
+                                        <h6 class="text-capitalize">Posted by {{ $post->user->name }}</h6>
                                         <h6>Ksh. {{ $post->price }}</h6>
                                         <small>Published on <span class="fw-bold">{{ date('jS M Y', strtotime($post->updated_at)) }}</span></small><br>
                                         <div>
@@ -51,8 +51,10 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6 banner-land position-relative rounded-3">
-                                        <div class="position-absolute top-50 start-50 translate-middle">
-                                            <h4 class="text-capitalize">{{ $post->title }}</h4>
+                                        <div class="py-5">
+                                            <div class="position-absolute top-50 start-50 translate-middle">
+                                                <h4 class="text-capitalize">{{ $post->title }}</h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
