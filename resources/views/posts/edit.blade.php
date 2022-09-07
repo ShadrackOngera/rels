@@ -4,7 +4,7 @@
     <div>
         <div class="container">
             <div class="container">
-                <form action="{{ route('update.post', $post->slug) }}" method="POST" class="mb-3">
+                <form action="{{route('posts.update',$post->slug)}}" method="POST" class="mb-3">
                     @csrf
                     @method('PUT')
                     <div class="form-floating mb-3">
