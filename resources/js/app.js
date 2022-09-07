@@ -16,7 +16,12 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
+import GetInTouchComponent from './components/GetInTouchComponent.vue';
+
+
+
 app.component('example-component', ExampleComponent);
+app.component('get-in-touch', GetInTouchComponent);
 
 /**
  * The following block of code may be used to automatically register your
