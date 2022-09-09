@@ -103,7 +103,7 @@
     </div>
     <div class="container">
         <div class="d-flex justify-content-center">
-            {!! $posts->links() !!}
+            {!! $posts->links("pagination::bootstrap-4") !!}
         </div>
     </div>
 @endsection
