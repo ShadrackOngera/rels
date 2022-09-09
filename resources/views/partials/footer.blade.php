@@ -2,9 +2,8 @@
     <div class="py-4"></div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="align-items-center">
-                    <div class="py-3"></div>
+            <div class="col-sm-4 align-self-center">
+                <div class="">
                     <h5 class="text-white">Join Our Mailing List</h5>
                     <div class="input-group mb-3">
                         <form action="{{ route('store.mail') }}" method="POST">
@@ -38,8 +37,10 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-4">
-                Last column
+            <div class="col-sm-4 align-self-center text-white fw-bold">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'REAL ESTATE LISTING SYSTEM') }}
+                </a>
             </div>
         </div>
     </div>
