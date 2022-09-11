@@ -17,6 +17,10 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function chat(){
+        return $this->hasMany(Chat::class);
+    }
+
     public function sluggable(): array
     {
         return [

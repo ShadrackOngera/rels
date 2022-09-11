@@ -84,8 +84,9 @@ class PostsController extends Controller
     {
         //show specific post
 
+        $post = Post::where('slug', $slug)->with('chat')->firstOrFail();
 
-        return view('posts.show')->with('post', Post::where('slug', $slug)->first());
+        return view('posts.show')->with('post', $post);
     }
 
     /**

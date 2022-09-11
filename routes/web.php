@@ -27,5 +27,9 @@ Route::post('/posts', [\App\Http\Controllers\PostsController::class, 'store'])->
 Route::resource('posts', \App\Http\Controllers\PostsController::class);
 
 
+
+Route::resource('chats', \App\Http\Controllers\ChatsController::class);
+
+
 Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

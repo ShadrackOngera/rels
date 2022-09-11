@@ -37,6 +37,35 @@
                 {!! nl2br(e($post->description)) !!}
             </p>
         </div>
+        <div>
+            <div class="card shadow mb-3">
+                <div class="card-body">
+                    {{ $post->chat }}
+                    @foreach($post->chat as $chat)
+                        <p class="mb-0">
+                            @if($chat->user_id == $post->user_id)
+                                <div class="float-end fw-bold">
+                                    {{ $chat->message }}
+                                </div>
+                            @else
+                                {{ $chat->message }}
+                            @endif
+                        </p><br>
+
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+        <form action="{{ route('chats.store') }}" method="POST">
+            @csrf
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Ask a Question" aria-label="Recipient's username" name="message" aria-describedby="button-addon2">
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                <button class="btn btn-outline-secondary text-indigo" type="submit" id="button-addon2">Submit</button>
+            </div>
+        </form>
+
         <div class="d-grid gap-2 col-6 mx-auto mb-3">
             <a href="{{ route('home') }}" class="btn btn-info text-white">Back</a>
         </div>
