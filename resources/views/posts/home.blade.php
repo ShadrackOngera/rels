@@ -31,7 +31,7 @@
                                         <h4 class="">Location: {{ $post->location }}</h4>
                                         <h5 class="">Size: {{ $post->size }}</h5>
                                         <h6 class="text-capitalize">Posted by {{ $post->user->name }}</h6>
-                                        <h6>Ksh. {{ $post->price }}</h6>
+                                        <h6>Ksh. {{ number_format($post->price) }}</h6>
                                         <small>Published on <span class="fw-bold">{{ date('jS M Y', strtotime($post->updated_at)) }}</span></small><br>
                                         <div>
                                             <span>Title deed: </span>

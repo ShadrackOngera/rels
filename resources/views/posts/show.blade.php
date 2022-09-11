@@ -12,7 +12,7 @@
         <h5>Location:&nbsp;<strong>{{ $post->location }}</strong></h5>
         <h5>Land Size:&nbsp;<strong>{{ $post->size }}</strong></h5>
         <h5>Seller Name:&nbsp;<strong>{{ $post->user->name }}</strong></h5>
-        <h5>Outright Price:&nbsp;<strong>{{ $post->price }}</strong></h5>
+        <h5>Outright Price:&nbsp;<strong>{{ number_format($post->price) }}</strong></h5>
         <div class="h5">
             <span>Title deed: </span>
             @if($post->deed == 1)
