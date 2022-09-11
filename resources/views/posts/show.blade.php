@@ -40,18 +40,22 @@
         <div>
             <div class="card shadow mb-3">
                 <div class="card-body">
-                    {{ $post->chat }}
+{{--                    {{ $post->chat }}--}}
+                    <h3 class="text-center text-decoration-underline">
+                        Comments
+                    </h3>
                     @foreach($post->chat as $chat)
-                        <p class="mb-0">
+                        <div class="mb-0">
                             @if($chat->user_id == $post->user_id)
-                                <div class="float-end fw-bold">
+                                <span class="float-end fw-bold text-muted">
                                     {{ $chat->message }}
-                                </div>
+                                </span>
                             @else
-                                {{ $chat->message }}
+                                <span class="">
+                                    {{ $chat->message }}
+                                </span>
                             @endif
-                        </p><br>
-
+                        </div><br>
                     @endforeach
                 </div>
             </div>

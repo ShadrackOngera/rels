@@ -62,25 +62,25 @@
                                     <a href="{{ route('posts.show', $post->slug)  }}" class="btn btn-info w-100 text-white mb-3">View Offer</a>
                                     @if(isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                                         <div class="row">
-                                            <div class="col-sm-4 mb-3">
+                                            <div class="col-sm-6 mb-3">
                                                 <div class="d-grid gap-2">
                                                     <a href="{{ route('posts.edit', $post->slug)  }}" class="btn btn-primary text-white">
                                                         Edit
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4 mb-3">
-                                                <div class="d-grid gap-2 text-center">
-                                                    <a href="#" class="btn btn-primary text-white position-relative">
-                                                        New Messages
-                                                        <span class=" badge rounded-2 ms-3 py-2 bg-success fw-bold">
-                                                            0
-                                                            <span class="visually-hidden">unread messages</span>
-                                                          </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-4">
+{{--                                            <div class="col-sm-4 mb-3">--}}
+{{--                                                <div class="d-grid gap-2 text-center">--}}
+{{--                                                    <a href="#" class="btn btn-primary text-white position-relative">--}}
+{{--                                                        New Messages--}}
+{{--                                                        <span class=" badge rounded-2 ms-3 py-2 bg-success fw-bold">--}}
+{{--                                                            0--}}
+{{--                                                            <span class="visually-hidden">unread messages</span>--}}
+{{--                                                          </span>--}}
+{{--                                                    </a>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+                                            <div class="col-sm-6">
                                                 <form action="{{route('posts.destroy',$post->id)}}" method="POST">
                                                     @csrf
                                                     @method('delete')
