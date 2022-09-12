@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\MailingList;
 use Illuminate\Http\Request;
 
@@ -28,5 +29,23 @@ class PagesController extends Controller
         ]);
 
         return redirect('/');
+    }
+
+    public function storeContact(Request $request){
+        //store contact Get in Touch Message
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'message' => ['required']
+        ]);
+
+        $contacts = Contact::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'message' => $request->input('message'),
+        ]);
+
+        return redirect()->back();
     }
 }

@@ -22,7 +22,6 @@ class ChatsController extends Controller
 
 //        return view('posts.show')->with('chats', Chat::all());
         $chats = Chat::latest()->get();
-        return $chats;
         return view('posts.show')->with('chats', $chats);
     }
 
