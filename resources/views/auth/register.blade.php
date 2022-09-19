@@ -40,6 +40,25 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Account Type') }}</label>
+
+                            <div class="col-md-6">
+{{--                                <input id="email" type="email" class="form-control @error('type') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">--}}
+                                <select class="form-select" aria-label="Default select example" name="type">
+                                    <option selected>Choose Account type</option>
+                                    <option value="buyer">Buyer</option>
+                                    <option value="seller">seller</option>
+                                </select>
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

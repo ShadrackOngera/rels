@@ -17,6 +17,7 @@ Route::get('/contact', [\App\Http\Controllers\PagesController::class, 'contactPa
 Route::get('/about-us', [\App\Http\Controllers\PagesController::class, 'aboutPage'])->name('about');
 Route::post('/store-mail', [\App\Http\Controllers\PagesController::class, 'storeEmails'])->name('store.mail');
 Route::post('/store-contact', [\App\Http\Controllers\PagesController::class, 'storeContact'])->name('store.contact');
+Route::get('/admin/users', [\App\Http\Controllers\PagesController::class, 'usersPage'])->name('users.all');
 
 //posts controller
 Route::get('/', [\App\Http\Controllers\PostsController::class, 'index'])->name('home');
@@ -30,6 +31,11 @@ Route::resource('posts', \App\Http\Controllers\PostsController::class);
 
 
 Route::resource('chats', \App\Http\Controllers\ChatsController::class);
+
+
+Route::group(['middleware' => ['permission:publish articles|edit articles']], function () {
+    //
+});
 
 
 Auth::routes();
