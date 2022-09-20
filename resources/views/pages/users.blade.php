@@ -10,6 +10,7 @@
                         <th scope="col">Email</th>
                         <th scope="col">Account Type</th>
                         <th scope="col">Make Seller</th>
+                        <th scope="col">Make Moderator</th>
                         <th scope="col">Make Admin</th>
                     </tr>
                 </thead>
@@ -26,6 +27,15 @@
                                 <input type="text" value="{{ $user->id }}" hidden name="user_id">
                                 <button class="btn btn btn-outline-info" type="submit" >
                                     Make Seller
+                                </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('admins.makeModerator') }}" method="POST">
+                                @csrf
+                                <input type="text" value="{{ $user->id }}" hidden name="user_id">
+                                <button class="btn btn btn-outline-info" type="submit" >
+                                    Make Moderator
                                 </button>
                             </form>
                         </td>

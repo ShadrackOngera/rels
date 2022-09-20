@@ -30,4 +30,16 @@ class AdminController extends Controller
 
         return redirect('/admin/users');
     }
+
+    public function makeModerator(Request $request){
+        $request->validate([
+            'user_id' => 'required',
+        ]);
+
+        $userId = $request->input('user_id');
+        $user = User::where('id', $userId)->first();
+        $user->assignRole('moderator');
+
+        return redirect('/admin/users');
+    }
 }

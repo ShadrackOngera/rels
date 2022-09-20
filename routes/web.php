@@ -35,6 +35,7 @@ Route::resource('chats', \App\Http\Controllers\ChatsController::class);
 Route::group(['middleware' => ['permission:publish post|edit post']], function () {
     Route::get('/admin/users', [\App\Http\Controllers\PagesController::class, 'usersPage'])->name('users.all');
     Route::post('/admin/makeSeller', [\App\Http\Controllers\AdminController::class, 'makeSeller'])->name('admins.makeSeller');
+    Route::post('/admin/makeModerator', [\App\Http\Controllers\AdminController::class, 'makeModerator'])->name('admins.makeModerator');
     Route::post('/admin/makeAdmin', [\App\Http\Controllers\AdminController::class, 'makeAdmin'])->name('admins.makeAdmin');
 
     Route::resource('admins', \App\Http\Controllers\AdminController::class);
