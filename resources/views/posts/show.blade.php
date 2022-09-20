@@ -41,21 +41,27 @@
             <div class="card shadow mb-3">
                 <div class="card-body">
 {{--                    {{ $post->chat }}--}}
-                    <h3 class="text-center text-decoration-underline">
-                        Comments
-                    </h3>
+                    <div class="card-header">
+                        <h3 class="text-center">
+                            Have a Question? Directly ask the Seller Here
+                        </h3>
+                        <p class="text-muted text-center">This Chat can only be seen by you and the Seller</p>
+                    </div>
+
                     @foreach($post->chat as $chat)
-                        <div class="mb-0">
-                            @if($chat->user_id == $post->user_id)
-                                <span class="float-end fw-bold text-muted">
-                                    {{ $chat->message }}
-                                </span>
-                            @else
-                                <span class="">
-                                    {{ $chat->message }}
-                                </span>
-                            @endif
-                        </div><br>
+{{--                        @if(($post->user->id) && (auth()->user()->id  === $post->chat->user_id))--}}
+                            <div class="mb-0">
+                                @if($chat->user_id == $post->user_id)
+                                    <span class="float-end fw-bold text-muted">
+                                        {{ $chat->message }}
+                                    </span>
+                                @else
+                                    <span class="">
+                                        {{ $chat->message }}
+                                    </span>
+                                @endif
+                            </div><br>
+{{--                        @endif--}}
                     @endforeach
                 </div>
             </div>
