@@ -12,7 +12,7 @@ class Post extends Model
     use HasFactory;
     use Sluggable;
 
-    protected $fillable = ['title', 'slug', 'description', 'price', 'location', 'size', 'user_id', 'deed'];
+    protected $fillable = ['title', 'slug', 'description', 'price', 'location', 'size', 'user_id', 'deed', 'type'];
 
     public $appends =['deed_url'];
 

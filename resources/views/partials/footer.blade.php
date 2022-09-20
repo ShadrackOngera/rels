@@ -27,7 +27,7 @@
                         <a href="{{ route('home') }}" class="nav-link">View Land Offers</a>
                     </li>
                     <li>
-                        <a href="{{ route('create.post') }}" class="nav-link">Post Land Offer</a>
+                        <a href="{{ route('posts.create') }}" class="nav-link">Post Land Offer</a>
                     </li>
                     <li>
                         <a href="{{ route('contact') }}" class="nav-link">Contact</a>

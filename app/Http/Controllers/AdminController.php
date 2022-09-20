@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use http\Message;
 use Illuminate\Http\Request;
@@ -48,4 +49,42 @@ class AdminController extends Controller
         $msg = 'User Id '. $userId . ' Is now a Moderator ';
         return redirect('/admin/users')->with('message', $msg);
     }
+
+    public function usersPage(){
+
+//        //create role
+//        $adminRole = Role::create(['name' => 'admin']);
+//        $moderatorRole = Role::create(['name' => 'moderator']);
+//        $sellerRole = Role::create(['name' => 'seller']);
+//
+//        //create permission
+//        $createPostPermission = Permission::create(['name' => 'create post']);
+//        $editPostPermission = Permission::create(['name' => 'edit post']);
+//        $deletePostPermission = Permission::create(['name' => 'delete post']);
+//        $publishPostPermission = Permission::create(['name' => 'publish post']);
+//
+//
+//        $adminRole->givePermissionTo($createPostPermission);
+//        $adminRole->givePermissionTo($editPostPermission);
+//        $adminRole->givePermissionTo($deletePostPermission);
+//        $adminRole->givePermissionTo($publishPostPermission);
+//
+//        $moderatorRole->givePermissionTo($publishPostPermission);
+//        $moderatorRole->givePermissionTo($editPostPermission);
+//
+//
+//        $sellerRole->givePermissionTo($createPostPermission);
+//        $sellerRole->givePermissionTo($editPostPermission);
+//
+//
+//
+//        $user = User::where('id', '1')->first();
+//        $user->assignRole('admin');
+
+//        show Users page
+        $users = User::orderBy('updated_at', 'DESC')->paginate(15);
+
+        return view('pages.users')->with('users', $users);
+    }
+
 }

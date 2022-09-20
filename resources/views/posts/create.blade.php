@@ -28,10 +28,10 @@
                     <label for="floatingInput">Outright Price</label>
                 </div>
 
-                <select class="form-select mb-3 py-3" aria-label="Default select example" name="type">
-                    <option selected>I'm ...</option>
-                    <option value="1">The Owner</option>
-                    <option value="2">A Broker</option>
+                <select class="form-select mb-3 py-3" aria-label="Default select example" name="type" >
+{{--                    <option selected>I'm ...</option>--}}
+                    <option value="owner">I'm The Owner</option>
+                    <option value="broker">I'm A Broker</option>
                 </select>
 
                 <div class="mb-3">

@@ -29,7 +29,7 @@ class PostsController extends Controller
     {
 
 //        dd(Post::latest()->first());
-        return view('posts.home')->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(8));
+        return view('posts.home')->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(20));
     }
 
     /**
@@ -93,18 +93,6 @@ class PostsController extends Controller
         ]);
 
         return redirect('/');
-    }
-
-    private function storeMedia(UploadedFile $file): array
-    {
-        $image = Image::make($file->path());
-
-        $path = Storage::put('/media', $file);
-
-        return [
-            Storage::url($path)
-        ];
-
     }
 
     /**
