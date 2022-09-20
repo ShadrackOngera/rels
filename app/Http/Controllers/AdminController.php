@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use http\Message;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,7 +17,9 @@ class AdminController extends Controller
         $user = User::where('id', $userId)->first();
         $user->assignRole('admin');
 
-        return redirect('/admin/users');
+        $msg = 'User Id '. $userId . ' Is now an Admin ';
+
+        return redirect('/admin/users')->with('message', $msg);
     }
 
     public function makeSeller(Request $request){
@@ -28,7 +31,9 @@ class AdminController extends Controller
         $user = User::where('id', $userId)->first();
         $user->assignRole('seller');
 
-        return redirect('/admin/users');
+        $msg = 'User Id '. $userId . ' Is now a Seller ';
+
+        return redirect('/admin/users')->with('message', $msg);
     }
 
     public function makeModerator(Request $request){
@@ -40,6 +45,7 @@ class AdminController extends Controller
         $user = User::where('id', $userId)->first();
         $user->assignRole('moderator');
 
-        return redirect('/admin/users');
+        $msg = 'User Id '. $userId . ' Is now a Moderator ';
+        return redirect('/admin/users')->with('message', $msg);
     }
 }
