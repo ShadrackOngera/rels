@@ -19,19 +19,10 @@ Route::post('/store-mail', [\App\Http\Controllers\PagesController::class, 'store
 Route::post('/store-contact', [\App\Http\Controllers\PagesController::class, 'storeContact'])->name('store.contact');
 
 
-//posts controller
-Route::get('/', [\App\Http\Controllers\PostsController::class, 'index'])->name('home');
-Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
-Route::get('/posts/{slug}/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
-Route::get('/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
-Route::post('/posts', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
-//Route::post('/delete/{id}', [\App\Http\Controllers\PostsController::class, 'destroy'])->name('posts.delete');
-Route::resource('posts', \App\Http\Controllers\PostsController::class);
-
-
 
 Route::resource('chats', \App\Http\Controllers\ChatsController::class);
 
+//admin routes
 Route::group(['middleware' => ['permission:publish post|edit post']], function () {
     Route::get('/admin/users', [\App\Http\Controllers\PagesController::class, 'usersPage'])->name('users.all');
     Route::post('/admin/makeSeller', [\App\Http\Controllers\AdminController::class, 'makeSeller'])->name('admins.makeSeller');
@@ -40,6 +31,24 @@ Route::group(['middleware' => ['permission:publish post|edit post']], function (
 
     Route::resource('admins', \App\Http\Controllers\AdminController::class);
 });
+
+//seller routes
+Route::group(['middleware' => ['permission:create post|edit post']], function () {
+    Route::get('/admin/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
+    Route::get('/admin/posts/{slug}/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
+    Route::get('/admin/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
+    Route::post('/posts', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
+    Route::resource('posts', \App\Http\Controllers\PostsController::class);
+});
+
+//moderator routes
+Route::group(['middleware' => ['permission:publish post|edit post']], function () {
+    Route::get('/admin/posts/{slug}/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
+    Route::get('/admin/posts', [\App\Http\Controllers\PostsController::class, 'index'])->name('home');
+    Route::post('/posts', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
+    Route::resource('admins', \App\Http\Controllers\AdminController::class);
+});
+
 
 
 Auth::routes();
