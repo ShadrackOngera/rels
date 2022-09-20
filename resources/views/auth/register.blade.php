@@ -45,7 +45,7 @@
                             <div class="col-md-6">
 {{--                                <input id="email" type="email" class="form-control @error('type') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">--}}
                                 <select class="form-select" aria-label="Default select example" name="type">
-                                    <option selected>Choose Account type</option>
+{{--                                    <option >Choose Account type</option>--}}
                                     <option value="buyer">Buyer</option>
                                     <option value="seller">seller</option>
                                 </select>

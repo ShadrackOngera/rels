@@ -4,7 +4,7 @@
     <div>
         <div class="container">
             @if(Auth::check())
-                @can('create post')
+                @if(auth()->user()->type == 'seller')
                     <div>
                         <div class="container mb-3 align-self-center">
                             <div class="position-relative py-5">
@@ -16,7 +16,7 @@
                             </div>
                         </div>
                     </div>
-                @endcan
+                @endif
             @endif
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\Http\Request;
@@ -10,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PostsController extends Controller
 {
@@ -25,7 +28,7 @@ class PostsController extends Controller
     public function index()
     {
 
-        dd(Post::latest()->first());
+//        dd(Post::latest()->first());
         return view('posts.home')->with('posts', Post::orderBy('updated_at', 'DESC')->paginate(8));
     }
 

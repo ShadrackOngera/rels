@@ -9,8 +9,7 @@
         </div>
     </div>
     <div class="container">
-        <h5>Location:&nbsp;<strong>{{ $post->deed }}</strong></h5>
-        <img src="{{ asset('storage/public'.$post->deed) }}" alt="last">
+        <h5>Location:&nbsp;<strong>{{ $post->location }}</strong></h5>
         <h5>Land Size:&nbsp;<strong>{{ $post->size }}</strong></h5>
         <h5>Seller Name:&nbsp;<strong>{{ $post->user->name }}</strong></h5>
         <h5>Outright Price:&nbsp;<strong>{{ number_format($post->price) }}</strong></h5>
