@@ -5,6 +5,7 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -12,6 +13,12 @@ class Post extends Model
     use Sluggable;
 
     protected $fillable = ['title', 'slug', 'description', 'price', 'location', 'size', 'user_id', 'deed'];
+
+    public $appends =['deed_url'];
+
+    public function getDeedUrlAttribute() {
+        return Storage::disk('public')->url($this->deed);
+    }
 
     public function user(){
         return $this->belongsTo(User::class);
