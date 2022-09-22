@@ -67,7 +67,7 @@ class PublishController extends Controller
 
 
 
-        return view('/posts');
+        return redirect()->back();
     }
 
     /**

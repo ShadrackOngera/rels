@@ -9,7 +9,7 @@
                         <div class="container mb-3 align-self-center">
                             <div class="position-relative py-5">
                                 <div class="-absolute top-50 start-50 translate-middle col-sm-4">
-                                    <a href="{{ route('posts.create') }}" class="btn btn-info text-white w-100">
+                                    <a href="/admin/create" class="btn btn-info text-white w-100">
                                         New Offer
                                     </a>
                                 </div>
