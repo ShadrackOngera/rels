@@ -9,5 +9,7 @@ class Publish extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug', 'description', 'price', 'location', 'size', 'user_id', 'deed', 'post_id', 'type'];
+    protected $fillable = ['title', 'slug', 'description', 'price', 'location', 'size', 'user_name', 'deed', 'post_id', 'type'];
+
+
 }

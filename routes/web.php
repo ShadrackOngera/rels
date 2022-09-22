@@ -27,6 +27,7 @@ Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show
 
 
 Route::resource('chats', \App\Http\Controllers\ChatsController::class);
+
 Route::get('/admin/users', [\App\Http\Controllers\AdminController::class, 'usersPage'])->name('users.all');
 //admin routes
 Route::group(['middleware' => ['permission:publish post|edit post']], function () {
@@ -41,7 +42,7 @@ Route::group(['middleware' => ['permission:publish post|edit post']], function (
 
 //seller routes
 Route::group(['middleware' => ['permission:create post|edit post']], function () {
-//    Route::get('/admin/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
+    Route::get('/admin/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
     Route::get('/admin/posts/{slug}/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
 //    Route::get('/admin/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 //    Route::post('/posts/store', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
@@ -56,6 +57,8 @@ Route::group(['middleware' => ['permission:publish post|edit post']], function (
 //    Route::post('/posts/store', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
     Route::resource('admins', \App\Http\Controllers\AdminController::class);
     Route::resource('publish', \App\Http\Controllers\PublishController::class);
+
+    Route::post('/publish/store', [\App\Http\Controllers\PublishController::class, 'store'])->name('publish.store');
 });
 
 

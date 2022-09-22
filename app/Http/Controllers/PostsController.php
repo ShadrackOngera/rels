@@ -63,6 +63,7 @@ class PostsController extends Controller
             'price' => ['required','min:1'],
         ]);
 
+
 //        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
 
 //        $size = $request->file('deed')->getSize();
@@ -74,11 +75,11 @@ class PostsController extends Controller
 //        $path = Storage::put('/images', $file);
 //        Storage::url($path);
 
-        $path = $request->file('deed')->store('title-deeds', 'public');
 //        $path = Storage::put('/title-deeds', $request->file('deeds'));
 
-        info('File path', [$path]);
+//        info('File path', [$path]);
 
+        $path = $request->file('deed')->storePublicly('title-deeds');
 
         $post = Post::create([
             'title' => $request->input('title'),

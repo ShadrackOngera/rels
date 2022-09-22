@@ -38,7 +38,7 @@ class PublishController extends Controller
     {
         $request->validate([
             'post_id' => 'required',
-            'user_id' => 'required',
+            'user_name' => 'required',
             'title' => 'required',
             'slug' => 'required',
             'description' => 'required',
@@ -49,6 +49,9 @@ class PublishController extends Controller
             'price' => ['required','min:1'],
         ]);
 
+
+//        dd($request);
+
         $publish = Publish::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
@@ -58,13 +61,13 @@ class PublishController extends Controller
             'price' => $request->input('price'),
             'deed' => $request->input('deed'),
             'type' => $request->input('type'),
-            'user_id' => $request->input('type'),
-            'post_id' => $request->input('type'),
+            'user_name' => $request->input('user_name'),
+            'post_id' => $request->input('post_id'),
         ]);
 
-        return ('post has been published');
 
-        return view('');
+
+        return view('/posts');
     }
 
     /**

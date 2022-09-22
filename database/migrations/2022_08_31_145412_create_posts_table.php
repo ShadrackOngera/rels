@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('description');
             $table->unsignedInteger('price');
             $table->string('deed')->nullable();
-            $table->boolean('type')->default(1);
+            $table->string('type')->default('owner');
             $table->unsignedBigInteger('user_id')->default(1);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

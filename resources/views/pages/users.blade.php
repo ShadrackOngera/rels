@@ -18,9 +18,13 @@
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Account Type</th>
-                        <th scope="col">Make Seller</th>
-                        <th scope="col">Make Moderator</th>
-                        <th scope="col">Make Admin</th>
+                        @can('give role')
+                            <th scope="col">Make Seller</th>
+                        @endcan
+                        @can('make moderator')
+                            <th scope="col">Make Moderator</th>
+                            <th scope="col">Make Admin</th>
+                        @endcan
                     </tr>
                 </thead>
                 <tbody>
@@ -30,33 +34,37 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->type }}</td>
-                        <td>
-                            <form action="{{ route('admins.makeSeller') }}" method="POST">
-                                @csrf
-                                <input type="text" value="{{ $user->id }}" hidden name="user_id">
-                                <button class="btn btn btn-outline-info" type="submit" >
-                                    Make Seller
-                                </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="{{ route('admins.makeModerator') }}" method="POST">
-                                @csrf
-                                <input type="text" value="{{ $user->id }}" hidden name="user_id">
-                                <button class="btn btn btn-outline-info" type="submit" >
-                                    Make Moderator
-                                </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="{{ route('admins.makeAdmin') }}" method="POST">
-                                @csrf
-                                <input type="text" value="{{ $user->id }}" hidden name="user_id">
-                                <button class="btn btn btn-outline-info" type="submit" >
-                                    Make Admin
-                                </button>
-                            </form>
-                        </td>
+                        @can('make seller')
+                            <td>
+                                <form action="{{ route('admins.makeSeller') }}" method="POST">
+                                    @csrf
+                                    <input type="text" value="{{ $user->id }}" hidden name="user_id">
+                                    <button class="btn btn btn-outline-info" type="submit" >
+                                        Make Seller
+                                    </button>
+                                </form>
+                            </td>
+                        @endcan
+                        @can('make moderator')
+                            <td>
+                                <form action="{{ route('admins.makeModerator') }}" method="POST">
+                                    @csrf
+                                    <input type="text" value="{{ $user->id }}" hidden name="user_id">
+                                    <button class="btn btn btn-outline-info" type="submit" >
+                                        Make Moderator
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('admins.makeAdmin') }}" method="POST">
+                                    @csrf
+                                    <input type="text" value="{{ $user->id }}" hidden name="user_id">
+                                    <button class="btn btn btn-outline-info" type="submit" >
+                                        Make Admin
+                                    </button>
+                                </form>
+                            </td>
+                        @endcan
                     </tr>
                 @endforeach
                 </tbody>

@@ -34,7 +34,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                         </li>
+                        @can('publish post')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('users.all') }}">View Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('posts.index') }}">View Posts</a>
+                            </li>
+                        @endcan
                 @else
+                    @can('publish post')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.all') }}">View Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts.index') }}">View Posts</a>
+                        </li>
+                    @endcan
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('about') }}">About Us</a>
                     </li>
