@@ -79,7 +79,7 @@ class PostsController extends Controller
 
 //        info('File path', [$path]);
 
-        $path = $request->file('deed')->storePublicly('title-deeds');
+        $path = $request->file('deed')->store('title-deeds', 'public');
 
         $post = Post::create([
             'title' => $request->input('title'),
