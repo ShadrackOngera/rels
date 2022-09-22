@@ -6,6 +6,8 @@ use App\Models\Post;
 use App\Models\User;
 use http\Message;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
 {
@@ -62,24 +64,30 @@ class AdminController extends Controller
 //        $editPostPermission = Permission::create(['name' => 'edit post']);
 //        $deletePostPermission = Permission::create(['name' => 'delete post']);
 //        $publishPostPermission = Permission::create(['name' => 'publish post']);
+//        $makeAdminPermission = Permission::create(['name' => 'make admin']);
+//        $makeModeratorPermission = Permission::create(['name' => 'make moderator']);
+//        $makeSellerPermission = Permission::create(['name' => 'make seller']);
 //
 //
 //        $adminRole->givePermissionTo($createPostPermission);
+//        $adminRole->givePermissionTo($makeAdminPermission);
+//        $adminRole->givePermissionTo($makeModeratorPermission);
+//        $adminRole->givePermissionTo($makeSellerPermission);
 //        $adminRole->givePermissionTo($editPostPermission);
 //        $adminRole->givePermissionTo($deletePostPermission);
 //        $adminRole->givePermissionTo($publishPostPermission);
 //
 //        $moderatorRole->givePermissionTo($publishPostPermission);
 //        $moderatorRole->givePermissionTo($editPostPermission);
+//        $moderatorRole->givePermissionTo($makeSellerPermission);
 //
 //
 //        $sellerRole->givePermissionTo($createPostPermission);
 //        $sellerRole->givePermissionTo($editPostPermission);
-//
-//
-//
-//        $user = User::where('id', '1')->first();
-//        $user->assignRole('admin');
+
+
+        $user = User::where('id', '1')->first();
+        $user->assignRole('admin');
 
 //        show Users page
         $users = User::orderBy('updated_at', 'DESC')->paginate(15);
