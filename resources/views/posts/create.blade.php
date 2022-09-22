@@ -12,42 +12,54 @@
             <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data" class="mb-3">
                 @csrf
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="title" placeholder="Title">
+                    <input type="text" class="form-control" id="floatingInput" name="title" placeholder="Title" required>
                     <label for="floatingInput">Title</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="location" placeholder="Location">
+                    <input type="text" class="form-control" id="floatingInput" name="location" placeholder="Location" required>
                     <label for="floatingInput">Location</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" name="size" placeholder="size">
+                    <input type="text" class="form-control" id="floatingInput" name="size" placeholder="size" required>
                     <label for="floatingInput">Land Size</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingInput" name="price" placeholder="Outright Price">
+                    <input type="number" class="form-control" id="floatingInput" name="price" placeholder="Outright Price" required>
                     <label for="floatingInput">Outright Price</label>
                 </div>
 
-                <select class="form-select mb-3 py-3" aria-label="Default select example" name="type" >
-{{--                    <option selected>I'm ...</option>--}}
+                <label for="floatingInput" class="text-muted">RelationShip</label>
+                <select class="form-select mb-3 py-3" aria-label="Default select example" name="type" required>
                     <option value="owner">I'm The Owner</option>
                     <option value="broker">I'm A Broker</option>
                 </select>
 
+                <select class="form-select mb-3 py-3" aria-label="Default select example" name="deed" required>
+                    <option selected>Do you have a title deed for this land?</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
                 <div class="mb-3">
                     <label for="floatingInput" class="text-muted">Title Deed Image</label>
-                    <input type="file" class="form-control" id="floatingInput" name="deed" placeholder="Title Deed Image">
+                    <input type="file" class="form-control" id="floatingInput" name="deed_img" placeholder="Title Deed Image" >
                 </div>
-{{--                <select class="form-select mb-3 py-3" aria-label="Default select example" name="deed">--}}
-{{--                    <option selected>Do you have a title deed for this land?</option>--}}
-{{--                    <option value="1">Yes</option>--}}
-{{--                    <option value="2">No</option>--}}
-{{--                </select>--}}
+
+                <div class="mb-3">
+                    <label for="floatingInput" class="text-muted">Land Photo</label>
+                    <input type="file" class="form-control" id="floatingInput" name="land_img" placeholder="Land Photo">
+                </div>
 
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Description" name="description" id="floatingTextarea2" style="height: 200px"></textarea>
+                    <textarea class="form-control" placeholder="Description" name="description" id="floatingTextarea2" style="height: 200px" required></textarea>
                     <label for="floatingTextarea2">Description</label>
                 </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="contact" placeholder="Contact" required>
+                    <label for="floatingInput">Contact</label>
+                </div>
+
                 <div class="d-grid gap-2 mb-3">
                     <button type="submit" class="btn btn-success text-white">
                         Submit

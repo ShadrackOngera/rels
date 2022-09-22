@@ -17,11 +17,13 @@
                 <h5>Seller Name:&nbsp;<strong>{{ $post->user->name }}</strong></h5>
                 <h5>Outright Price:&nbsp;<strong>{{ number_format($post->price) }}</strong></h5>
                 <h5>Sold By {{ $post->type }}</h5>
+                <h5><span class="text-capitalize">{{ $post->type }}</span> Contacts: <strong>{{ $post->contact }}</strong></h5>
+                <h5>Title Deed: <strong>{{ $post->deed }}</strong></h5>
             </div>
             <div class="col-sm-6">
                 <div class="card">
                     <h5 class="fw-bold">Title Deed Image</h5>
-                    <img src="{{ asset('storage/'.$post->deed) }}" alt="Title-Deed" class="img-fluid">
+                    <img src="{{ asset('storage/'.$post->deed_img) }}" alt="Title-Deed" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -32,6 +34,13 @@
             <p>
                 {!! nl2br(e($post->description)) !!}
             </p>
+        </div>
+
+        <div>
+            <div class="card">
+                <div class="card-header text-center h3 fw-bold">Photo of the Land</div>
+                <img src="{{ asset('storage/'.$post->land_img) }}" alt="Title-Deed" class="img-fluid">
+            </div>
         </div>
         <div>
             <div class="card shadow mb-3">

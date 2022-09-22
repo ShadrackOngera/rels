@@ -15,16 +15,19 @@ return new class extends Migration
     {
         Schema::create('publishes', function (Blueprint $table) {
             $table->id();
-            $table->string('slug');
-            $table->string('title');
-            $table->string('user_name')->default('RELS');
             $table->string('post_id')->default(1);
+            $table->string('user_name')->default('Real Estate Listing System');
+            $table->string('title');
+            $table->string('slug');
             $table->string('location');
             $table->string('size');
-            $table->text('description');
             $table->unsignedInteger('price');
-            $table->string('deed')->nullable();
             $table->string('type');
+            $table->string('deed');
+            $table->string('deed_img')->nullable();
+            $table->string('land_img')->nullable();
+            $table->string('contact')->default('admin@rels.co.ke');
+            $table->text('description');
             $table->timestamps();
         });
     }

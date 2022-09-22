@@ -41,28 +41,34 @@ class PublishController extends Controller
             'user_name' => 'required',
             'title' => 'required',
             'slug' => 'required',
-            'description' => 'required',
             'location' => 'required',
             'size' => 'required',
-            'deed' => 'required',
-            'type' => 'required',
             'price' => ['required','min:1'],
+            'type' => 'required',
+            'deed' => 'required',
+            'deed_img' => '',
+            'land_img' => '',
+            'contact' => 'required',
+            'description' => 'required',
         ]);
 
 
 //        dd($request);
 
         $publish = Publish::create([
+            'post_id' => $request->input('post_id'),
+            'user_name' => $request->input('user_name'),
             'title' => $request->input('title'),
-            'description' => $request->input('description'),
             'slug' => $request->input('slug'),
             'location' => $request->input('location'),
             'size' => $request->input('size'),
             'price' => $request->input('price'),
-            'deed' => $request->input('deed'),
             'type' => $request->input('type'),
-            'user_name' => $request->input('user_name'),
-            'post_id' => $request->input('post_id'),
+            'deed' => $request->input('deed'),
+            'deed_img' => $request->input('deed_img'),
+            'land_img' => $request->input('land_img'),
+            'contact' => $request->input('contact'),
+            'description' => $request->input('description'),
         ]);
 
 

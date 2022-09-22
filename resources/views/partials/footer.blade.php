@@ -26,9 +26,11 @@
                     <li class="">
                         <a href="{{ route('home') }}" class="nav-link">View Land Offers</a>
                     </li>
-                    <li>
-                        <a href="{{ route('posts.create') }}" class="nav-link">Post Land Offer</a>
-                    </li>
+                    @can('create post')
+                        <li>
+                            <a href="/admin/create" class="nav-link">Post Land Offer</a>
+                        </li>
+                    @endcan
                     <li>
                         <a href="{{ route('contact') }}" class="nav-link">Contact</a>
                     </li>

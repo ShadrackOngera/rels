@@ -55,12 +55,15 @@ class PostsController extends Controller
         //
         $request->validate([
             'title' => 'required',
-            'description' => 'required',
             'location' => 'required',
             'size' => 'required',
-            'deed' => 'required',
-            'type' => 'required',
             'price' => ['required','min:1'],
+            'type' => 'required',
+            'deed' => 'required',
+            'deed_img' => '',
+            'land_img' => '',
+            'contact' => 'required',
+            'description' => 'required',
         ]);
 
 
@@ -70,26 +73,26 @@ class PostsController extends Controller
 //        $name = $request->file('deed')->getClientOriginalName();
 //        $path = $request->file('deed')->store('public/images');
 
-//        $file = $request->file('deed');
-//        $image = Image::make($file->path());
-//        $path = Storage::put('/images', $file);
-//        Storage::url($path);
 
 //        $path = Storage::put('/title-deeds', $request->file('deeds'));
 
 //        info('File path', [$path]);
 
-        $path = $request->file('deed')->store('title-deeds', 'public');
+        $deed_path = $request->file('deed_img')->store('title-deeds', 'public');
+        $land_path = $request->file('land_img')->store('land-images', 'public');
 
         $post = Post::create([
             'title' => $request->input('title'),
-            'description' => $request->input('description'),
             'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
             'location' => $request->input('location'),
             'size' => $request->input('size'),
             'price' => $request->input('price'),
-            'deed' => $path,
             'type' => $request->input('type'),
+            'deed' => $request->input('deed'),
+            'deed_img' => $deed_path,
+            'land_img' => $land_path,
+            'contact' => $request->input('contact'),
+            'description' => $request->input('description'),
             'user_id' => auth()->user()->id,
         ]);
 

@@ -1,5 +1,20 @@
 @extends('layouts.app')
 @section('content')
+    @can('create post')
+        <div>
+            <div class="py-3"></div>
+            <div class="container mb-3 align-self-center">
+                <div class="position-relative">
+                    <div class="position-absolute top-50 start-50 translate-middle col-sm-4">
+                        <a href="/admin/create" class="btn btn-info text-white w-100">
+                            New Offer
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="py-3"></div>
+        </div>
+    @endcan
     <div>
         <div class="container">
             <div class="row">
@@ -11,23 +26,24 @@
                                     <div class="col-sm-6 mb-3">
                                         <h2 class="mb-3 text-capitalize">{{ $publish->title }}</h2>
                                         <h4 class="">Location: {{ $publish->location }}</h4>
-                                        <h5 class="">Size: {{ $publish->size }}</h5>
-                                        <h6 class="text-capitalize">Posted by {{ $publish->user_name }}</h6>
-                                        <h6>Ksh. {{ number_format($publish->price) }}</h6>
-                                        <small>Published on <span class="fw-bold">{{ date('jS M Y', strtotime($publish->updated_at)) }}</span></small><br>
-                                        <div>
-                                            <h6>Image Link {{ $publish->deed }}</h6>
-                                        </div>
-                                        <div>
-                                            <h6>Seller Type {{ $publish->type }}</h6>
-                                        </div>
+                                        <h6 class="">Size: <strong>{{ $publish->size }}</strong></h6>
+                                        <h6 class="text-capitalize">Posted by <strong>{{ $publish->user_name }}</strong></h6>
+                                        <h6>Ksh. <strong>{{ number_format($publish->price) }}</strong></h6>
+                                        <h6>Title Deed: <strong>{{ $publish->deed }}</strong></h6>
+                                        <h6>Sold By <strong>{{ $publish->type }}</strong></h6>
+                                        <small>Published on <span class="fst-italic">{{ date('jS M Y', strtotime($publish->updated_at)) }}</span></small><br>
                                     </div>
                                     <div class="col-sm-6 banner-land position-relative rounded-3">
-                                        <div class="py-5">
-                                            <div class="position-absolute top-50 start-50 translate-middle">
-                                                <h4 class="text-capitalize">{{ $publish->title }}</h4>
+                                        @if($publish->deed_img == NULL )
+                                            <div class="py-5">
+                                                <div class="position-absolute top-50 start-50 translate-middle">
+                                                    <h4 class="text-capitalize">{{ $publish->deed_img }}</h4>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @else
+                                            <img src="{{ asset('storage/'.$publish->deed_img) }}" alt="Title-Deed" class="img-fluid">
+                                            <h2>No Imgae Found</h2>
+                                        @endif
                                     </div>
                                 </div>
                                 <div>

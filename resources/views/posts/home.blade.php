@@ -3,21 +3,21 @@
 @section('content')
     <div>
         <div class="container">
-            @if(Auth::check())
-                @if(auth()->user()->type == 'seller')
-                    <div>
-                        <div class="container mb-3 align-self-center">
-                            <div class="position-relative py-5">
-                                <div class="-absolute top-50 start-50 translate-middle col-sm-4">
-                                    <a href="/admin/create" class="btn btn-info text-white w-100">
-                                        New Offer
-                                    </a>
-                                </div>
+            @can('create post')
+                <div>
+                    <div class="py-3"></div>
+                    <div class="container mb-3 align-self-center">
+                        <div class="position-relative">
+                            <div class="position-absolute top-50 start-50 translate-middle col-sm-4">
+                                <a href="/admin/create" class="btn btn-info text-white w-100">
+                                    New Offer
+                                </a>
                             </div>
                         </div>
                     </div>
-                @endif
-            @endif
+                    <div class="py-3"></div>
+                </div>
+                @endcan
         </div>
     </div>
     <div>
@@ -30,6 +30,7 @@
                     <th scope="col">Location</th>
                     <th scope="col">Posted By</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Contact</th>
                     @can('publish post')
                         <th scope="col">View Offer</th>
                         <th scope="col">Edit</th>
@@ -45,6 +46,7 @@
                             <td>{{ $post->location }}</td>
                             <td>{{ $post->user->name }}</td>
                             <td>{{ number_format($post->price) }}</td>
+                            <td>{{ $post->contact }}</td>
                             @can('publish post')
                                 <td>
                                     <a href="{{ route('posts.show', $post->slug)  }}" class="btn btn-outline-primary">
@@ -67,7 +69,10 @@
                                         <input type="text" class="form-control" id="floatingInput" name="size"  hidden value="{{ $post->size }}">
                                         <input type="number" class="form-control" id="floatingInput" name="price" hidden value="{{ $post->price }}">
                                         <input type="text" class="form-control" id="floatingInput" name="type"  hidden value="{{ $post->type }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="deed" placeholder="Title Deed Image" hidden value="{{ $post->deed }}">
+                                        <input type="text" class="form-control" id="floatingInput" name="deed" hidden value="{{ $post->deed }}">
+                                        <input type="text" class="form-control" id="floatingInput" name="deed_img" hidden value="{{ $post->deed_img }}">
+                                        <input type="text" class="form-control" id="floatingInput" name="land_img" hidden value="{{ $post->land_img }}">
+                                        <input type="text" class="form-control" id="floatingInput" name="contact" hidden value="{{ $post->contact }}">
                                         <textarea class="form-control" placeholder="Description" name="description" id="floatingTextarea2" style="height: 200px" hidden value="{{ $post->description }}"></textarea>
 
                                         <button type="submit" class="btn btn-success text-white">

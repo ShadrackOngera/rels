@@ -12,12 +12,29 @@ class Post extends Model
     use HasFactory;
     use Sluggable;
 
-    protected $fillable = ['title', 'slug', 'description', 'price', 'location', 'size', 'user_id', 'deed', 'type'];
+    protected $fillable = [
+        'title',
+        'slug',
+        'location',
+        'size',
+        'price',
+        'type',
+        'deed',
+        'deed_img',
+        'land_img',
+        'contact',
+        'description',
+        'user_id',
+    ];
 
-    public $appends =['deed_url'];
+    public $appends =['deed_img_url'];
 
     public function getDeedUrlAttribute() {
-        return Storage::disk('public')->url($this->deed);
+        return Storage::disk('public')->url($this->deed_img);
+    }
+
+    public function getlandImageUrlAttribute() {
+        return Storage::disk('public')->url($this->land_img);
     }
 
     public function user(){
