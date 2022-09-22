@@ -39,6 +39,9 @@
                                 <a class="nav-link" href="{{ route('users.all') }}">View Users</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('publish.index') }}">All Posts</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('posts.index') }}">View Posts</a>
                             </li>
                         @endcan
@@ -46,6 +49,9 @@
                     @can('publish post')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.all') }}">View Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('publish.index') }}">All Posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts.index') }}">View Posts</a>

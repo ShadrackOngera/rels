@@ -37,12 +37,11 @@
                                         @if($publish->deed_img == NULL )
                                             <div class="py-5">
                                                 <div class="position-absolute top-50 start-50 translate-middle">
-                                                    <h4 class="text-capitalize">{{ $publish->deed_img }}</h4>
+                                                    <h2 class="text-danger text-center">Error Loading Image</h2>
                                                 </div>
                                             </div>
                                         @else
                                             <img src="{{ asset('storage/'.$publish->deed_img) }}" alt="Title-Deed" class="img-fluid">
-                                            <h2>No Imgae Found</h2>
                                         @endif
                                     </div>
                                 </div>

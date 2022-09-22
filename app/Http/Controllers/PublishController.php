@@ -46,12 +46,11 @@ class PublishController extends Controller
             'price' => ['required','min:1'],
             'type' => 'required',
             'deed' => 'required',
-            'deed_img' => '',
-            'land_img' => '',
+            'deed_img' => 'required',
+            'land_img' => 'required',
             'contact' => 'required',
             'description' => 'required',
         ]);
-
 
 //        dd($request);
 
