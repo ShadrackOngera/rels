@@ -15,6 +15,11 @@
             <div class="py-3"></div>
         </div>
     @endcan
+    <div class="py-3"></div>
+    <section>
+        @include('partials.filter')
+    </section>
+    <div class="py-3"></div>
     <div>
         <div class="container">
             <div class="row justify-content-center">
