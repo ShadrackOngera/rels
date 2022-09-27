@@ -5,7 +5,7 @@
             <div class="py-4"></div>
             <div class="container">
                 <div class="align-self-center text-center text-indigo">
-                    <h1>About Real Estate Listing System</h1>
+                    <h1 class="text-capitalize">About {{ config('app.name') }}</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, voluptatem!
                     </p>
@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-sm-6 align-self-center mb-3">
                         <h2>
-                            About Real Estate Listing System
+                            About {{ config('app.name') }}
                         </h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolores eum necessitatibus nisi tempore, voluptas?
@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="col-sm-6 align-self-center mb-3">
                         <h2>
-                            More About Real Estate Listing System
+                            More About {{ config('app.name') }}
                         </h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolores eum necessitatibus nisi tempore, voluptas?

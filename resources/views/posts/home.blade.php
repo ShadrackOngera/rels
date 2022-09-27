@@ -61,18 +61,18 @@
                                 <td>
                                     <form action="{{ route('publish.store') }}" method="POST" enctype="" class="mb-3">
                                         @csrf
-                                        <input type="number" class="form-control" id="floatingInput" name="post_id" hidden value="{{ $post->id }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="user_name" hidden value="{{ $post->user->name }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="title" hidden value="{{ $post->title }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="slug" hidden value="{{ $post->slug }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="location" hidden value="{{ $post->location }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="size"  hidden value="{{ $post->size }}">
-                                        <input type="number" class="form-control" id="floatingInput" name="price" hidden value="{{ $post->price }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="type"  hidden value="{{ $post->type }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="deed" hidden value="{{ $post->deed }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="deed_img" hidden value="{{ $post->deed_img }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="land_img" hidden value="{{ $post->land_img }}">
-                                        <input type="text" class="form-control" id="floatingInput" name="contact" hidden value="{{ $post->contact }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="post_id" hidden value="{{ $post->id }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="user_name" hidden value="{{ $post->user->name }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="title" hidden value="{{ $post->title }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="slug" hidden value="{{ $post->slug }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="location" hidden value="{{ $post->location }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="size"  hidden value="{{ $post->size }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="price" hidden value="{{ $post->price }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="type"  hidden value="{{ $post->type }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="deed" hidden value="{{ $post->deed }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="deed_img" hidden value="{{ $post->deed_img }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="land_img" hidden value="{{ $post->land_img }}">
+                                        <input type="hidden" class="form-control" id="floatingInput" name="contact" hidden value="{{ $post->contact }}">
                                         <textarea class="form-control" placeholder="Description" name="description" id="floatingTextarea2" style="height: 200px" hidden value="{{ $post->description }}"></textarea>
 
                                         <button type="submit" class="btn btn-success text-white">

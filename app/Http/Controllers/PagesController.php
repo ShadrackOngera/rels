@@ -11,6 +11,13 @@ use Spatie\Permission\Models\Role;
 
 class PagesController extends Controller
 {
+
+    public function homePage(){
+        //show Home page
+
+        return view('pages.home');
+    }
+
     public function contactPage(){
         //show Contact page
 

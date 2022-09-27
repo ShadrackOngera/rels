@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //pages controller
+Route::get('/', [\App\Http\Controllers\PagesController::class, 'homePage'])->name('home');
 Route::get('/contact', [\App\Http\Controllers\PagesController::class, 'contactPage'])->name('contact');
 Route::get('/about-us', [\App\Http\Controllers\PagesController::class, 'aboutPage'])->name('about');
 Route::post('/store-mail', [\App\Http\Controllers\PagesController::class, 'storeEmails'])->name('store.mail');
@@ -20,7 +21,7 @@ Route::post('/store-contact', [\App\Http\Controllers\PagesController::class, 'st
 
 
 //all publish
-Route::get('/', [\App\Http\Controllers\PublishController::class, 'index'])->name('home');
+Route::get('/offers', [\App\Http\Controllers\PublishController::class, 'index'])->name('offers.home');
 Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 //view offer
 
