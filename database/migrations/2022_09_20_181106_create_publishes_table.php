@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('publishes', function (Blueprint $table) {
             $table->id();
-            $table->string('post_id')->default(1);
-            $table->string('user_name')->default('Real Estate Listing System');
+            $table->unsignedBigInteger('post_id')->default(1);
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->string('title');
+            $table->string('user_name');
             $table->string('slug');
             $table->string('location');
             $table->string('size');

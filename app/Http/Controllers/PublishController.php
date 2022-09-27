@@ -32,7 +32,7 @@ class PublishController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -72,7 +72,6 @@ class PublishController extends Controller
         ]);
 
 
-        return $publish;
         return redirect()->back();
     }
 

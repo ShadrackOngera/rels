@@ -20,6 +20,15 @@ Route::post('/store-mail', [\App\Http\Controllers\PagesController::class, 'store
 Route::post('/store-contact', [\App\Http\Controllers\PagesController::class, 'storeContact'])->name('store.contact');
 
 
+//Pages Filters
+Route::get('/offers/filters/100k', [\App\Http\Controllers\FiltersController::class, 'hundredThousand'])->name('hundred');
+Route::get('/offers/filters/300k', [\App\Http\Controllers\FiltersController::class, 'threeHundredThousand'])->name('three.hundred');
+Route::get('/offers.filters/700k', [\App\Http\Controllers\FiltersController::class, 'sevenHundredThousand'])->name('seven.hundred');
+Route::get('/offers/filters/1-million', [\App\Http\Controllers\FiltersController::class, 'oneMillion'])->name('one.mill');
+Route::get('/offers/filters/1.5-million', [\App\Http\Controllers\FiltersController::class, 'onePointFiveMillion'])->name('one.point');
+Route::get('/offers/filters/two-million', [\App\Http\Controllers\FiltersController::class, 'twoMillion'])->name('two.mill');
+
+
 //all publish
 Route::get('/offers', [\App\Http\Controllers\PublishController::class, 'index'])->name('offers.home');
 Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
