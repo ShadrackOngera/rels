@@ -29,6 +29,12 @@
                         </li>
                     @endif
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('offers.home') }}">Land Offers</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">About Us</a>
                         </li>
                         <li class="nav-item">
@@ -57,6 +63,12 @@
                             <a class="nav-link" href="{{ route('posts.index') }}">View Posts</a>
                         </li>
                     @endcan
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('offers.home') }}">Land Offers</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('about') }}">About Us</a>
                     </li>

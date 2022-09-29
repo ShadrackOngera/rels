@@ -27,6 +27,7 @@ Route::get('/offers.filters/700k', [\App\Http\Controllers\FiltersController::cla
 Route::get('/offers/filters/1-million', [\App\Http\Controllers\FiltersController::class, 'oneMillion'])->name('one.mill');
 Route::get('/offers/filters/1.5-million', [\App\Http\Controllers\FiltersController::class, 'onePointFiveMillion'])->name('one.point');
 Route::get('/offers/filters/two-million', [\App\Http\Controllers\FiltersController::class, 'twoMillion'])->name('two.mill');
+Route::get('/offers/filters/my-posts', [\App\Http\Controllers\FiltersController::class, 'myPosts'])->name('my.posts');
 
 
 //all publish

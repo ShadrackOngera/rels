@@ -6,8 +6,9 @@
                 <div class="">
                     <h5 class="text-white">Join Our Mailing List</h5>
                     <div class="input-group mb-3">
-                        <form action="{{ route('store.mail') }}" method="POST">
-                            @csrf
+                        <div class="w-100">
+                            <form action="{{ route('store.mail') }}" method="POST">
+                                @csrf
                                 <div class="input-group mb-3">
                                     <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" name="email" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-secondary text-white" type="submit" id="button-addon2">
@@ -16,15 +17,19 @@
                                         </svg>
                                     </button>
                                 </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 fw-bold text-muted">
+            <div class="col-sm-4 fw-bold text-white text-center">
                 <h4>Pages</h4>
                 <ul class="navbar-nav">
                     <li class="">
-                        <a href="{{ route('home') }}" class="nav-link">View Land Offers</a>
+                        <a href="{{ route('home') }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="">
+                        <a href="{{ route('offers.home') }}" class="nav-link">View Land Offers</a>
                     </li>
                     @can('create post')
                         <li>
@@ -39,7 +44,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-4 align-self-center text-white fw-bold">
+            <div class="col-sm-4 align-self-center text-white fw-bold text-center">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'REAL ESTATE LISTING SYSTEM') }}
                 </a>

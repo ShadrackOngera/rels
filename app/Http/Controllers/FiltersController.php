@@ -89,5 +89,17 @@ class FiltersController extends Controller
         return view('publish.home')->with('publishes' , $filters);
     }
 
+    public function myPosts(){
+
+        $query = Publish::where('user_name', auth()->user()->name);
+
+
+
+        $filters = QueryBuilder::for($query)
+            ->get();
+
+        return view('publish.home')->with('publishes' , $filters);
+    }
+
 
 }
