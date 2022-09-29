@@ -23,9 +23,9 @@
         <div class="py-3"></div>
         <div>
             <div class="container">
-                <div class="row justify-content-center">
+                <div class="row">
                     @foreach($publishes as $publish)
-                        <div class="col-sm-9 mb-4 justify-content-center">
+                        <div class="col-sm-6 mb-4 justify-content-center">
                             <div class="card shadow h-100">
                                 <div class="card-body d-flex flex-column justify-content-between">
                                     <div class="row mb-3">
