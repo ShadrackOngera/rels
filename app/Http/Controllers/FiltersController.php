@@ -27,7 +27,7 @@ class FiltersController extends Controller
 
     public function threeHundredThousand(){
 
-        $query = Publish::where('price', '>',100000 ,'<', 300000);
+        $query = Publish::where('price' ,'<', 300000);
 
 
 
@@ -40,7 +40,7 @@ class FiltersController extends Controller
 
     public function sevenHundredThousand(){
 
-        $query = Publish::where('price', '>', 300000, '<', 700000);
+        $query = Publish::where('price', '<', 700000);
 
 
 
@@ -53,7 +53,7 @@ class FiltersController extends Controller
 
     public function oneMillion(){
 
-        $query = Publish::where('price','>', 700000, '<', 1000000);
+        $query = Publish::where('price', '<', 1000000);
 
 
 
@@ -66,7 +66,7 @@ class FiltersController extends Controller
 
     public function onePointFiveMillion(){
 
-        $query = Publish::where('price', '>', 1000000, '<', 1500000);
+        $query = Publish::where('price', '<', 1500000);
 
 
 
@@ -79,7 +79,7 @@ class FiltersController extends Controller
 
     public function twoMillion(){
 
-        $query = Publish::where('price', '>', 1500000, '<', 2000000);
+        $query = Publish::where('price', '<', 2000000);
 
 
 
