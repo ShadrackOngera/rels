@@ -45,18 +45,24 @@ Route::group(['middleware' => ['permission:publish post|edit post']], function (
     Route::post('/admin/makeSeller', [\App\Http\Controllers\AdminController::class, 'makeSeller'])->name('admins.makeSeller');
     Route::post('/admin/makeModerator', [\App\Http\Controllers\AdminController::class, 'makeModerator'])->name('admins.makeModerator');
     Route::post('/admin/makeAdmin', [\App\Http\Controllers\AdminController::class, 'makeAdmin'])->name('admins.makeAdmin');
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'adminHome'])->name('admin.home');
+    Route::get('/admin/houses', [\App\Http\Controllers\RentalController::class, 'index'])->name('rentals.home');
+
 
     Route::resource('admins', \App\Http\Controllers\AdminController::class);
 });
 
 //seller routes
 Route::group(['middleware' => ['permission:create post|edit post']], function () {
-    Route::get('/admin/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
+    Route::get('/admin/create/land', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
+//    Route::get('/admin/create/house', [\App\Http\Controllers\RentalController::class, 'create'])->name('rentals.create');
+//    Route::post('/rental/store', [\App\Http\Controllers\RentalController::class, 'store'])->name('rentals.store');
     Route::get('/admin/posts/{slug}/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
 //    Route::get('/admin/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 //    Route::post('/posts/store', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
 //    Route::post('/update', [\App\Http\Controllers\PostsController::class, 'update'])->name('posts.update');
     Route::resource('posts', \App\Http\Controllers\PostsController::class);
+    Route::resource('rentals', \App\Http\Controllers\RentalController::class);
 });
 
 //moderator routes
