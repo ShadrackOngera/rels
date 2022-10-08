@@ -53,20 +53,20 @@
                         <td>{{ $rental->relationship }}</td>
                         @can('publish post')
                             <td>
-                                <a href="{{ route('posts.show', $rental->slug)  }}" class="btn btn-outline-primary">
+                                <a href="{{ route('rentals.show', $rental->slug)  }}" class="btn btn-outline-primary">
                                     View
                                 </a>
                             </td>
                             <td>
-                                <a href="{{ route('posts.edit', $rental->slug)  }}" class="btn btn-outline-primary">
+                                <a href="{{ route('rentals.edit', $rental->slug)  }}" class="btn btn-outline-primary">
                                     Edit
                                 </a>
                             </td>
                             <td>
                                 <form action="{{ route('publish.store') }}" method="POST" enctype="" class="mb-3">
                                     @csrf
-                                    <input type="hidden" name="post_id" hidden value="{{ $rental->id }}">
-{{--                                    <input type="hidden" name="user_name" hidden value="{{ $rental->user->name }}">--}}
+                                    <input type="hidden" name="house_id" hidden value="{{ $rental->id }}">
+                                    <input type="hidden" name="user_name" hidden value="{{ $rental->user->name }}">
                                     <input type="hidden" name="title" hidden value="{{ $rental->title }}">
                                     <input type="hidden" name="slug" hidden value="{{ $rental->slug }}">
                                     <input type="hidden" name="location" hidden value="{{ $rental->location }}">

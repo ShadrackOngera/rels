@@ -31,7 +31,8 @@ Route::get('/offers/filters/my-posts', [\App\Http\Controllers\FiltersController:
 
 
 //all publish
-Route::get('/offers', [\App\Http\Controllers\PublishController::class, 'index'])->name('offers.home');
+Route::get('/land/offers', [\App\Http\Controllers\PublishController::class, 'index'])->name('land.home');
+Route::get('/house/offers', [\App\Http\Controllers\HousePublishController::class, 'index'])->name('house.home');
 Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 //view offer
 
