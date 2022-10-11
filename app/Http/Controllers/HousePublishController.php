@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HousePublish;
 use Illuminate\Http\Request;
 
 class HousePublishController extends Controller
@@ -15,7 +16,8 @@ class HousePublishController extends Controller
     {
         //
 
-        return view('rental.offers');
+        $rentals = HousePublish::orderBy('created_at', 'DESC')->paginate(10);
+        return view('rental.offers')->with('rentals', $rentals);
     }
 
     /**
@@ -36,7 +38,38 @@ class HousePublishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'house_id' => 'required',
+            'user_name' => 'required',
+            'title' => 'required',
+            'slug' => ['required','min:1'],
+            'location' => 'required',
+            'house_type' => 'required',
+            'price' => 'required',
+            'time' => 'required',
+            'relationship' => 'required',
+            'house_image' => 'required',
+            'description' => 'required',
+            'contact' => 'required',
+        ]);
+
+        $housePublish = HousePublish::create([
+            'house_id' => $request->input('house_id'),
+            'user_name' => $request->input('user_name'),
+            'title' => $request->input('title'),
+            'slug' => $request->input('slug'),
+            'location' => $request->input('location'),
+            'house_type' => $request->input('house_type'),
+            'price' => $request->input('price'),
+            'time' => $request->input('time'),
+            'relationship' => $request->input('relationship'),
+            'house_image' => $request->input('house_image'),
+            'description' => $request->input('description'),
+            'contact' => $request->input('contact'),
+        ]);
+
+
+        return redirect()->back();
     }
 
     /**

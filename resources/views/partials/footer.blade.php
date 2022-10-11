@@ -29,7 +29,10 @@
                         <a href="{{ route('home') }}" class="nav-link">Home</a>
                     </li>
                     <li class="">
-                        <a href="{{ route('offers.home') }}" class="nav-link">View Land Offers</a>
+                        <a href="{{ route('housePublish.home') }}" class="nav-link">View House Offers</a>
+                    </li>
+                    <li class="">
+                        <a href="{{ route('land.home') }}" class="nav-link">View Land Offers</a>
                     </li>
                     @can('create post')
                         <li>

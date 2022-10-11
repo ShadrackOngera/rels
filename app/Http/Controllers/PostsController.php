@@ -161,7 +161,7 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+
         $post = Post::where('id', $id)->delete();
 //        echo 'Successfully deleted';
 

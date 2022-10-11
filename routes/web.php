@@ -32,8 +32,10 @@ Route::get('/offers/filters/my-posts', [\App\Http\Controllers\FiltersController:
 
 //all publish
 Route::get('/land/offers', [\App\Http\Controllers\PublishController::class, 'index'])->name('land.home');
-Route::get('/house/offers', [\App\Http\Controllers\HousePublishController::class, 'index'])->name('house.home');
+Route::get('/house/offers', [\App\Http\Controllers\HousePublishController::class, 'index'])->name('housePublish.home');
 Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
+
+Route::post('/house/store', [\App\Http\Controllers\HousePublishController::class, 'store'])->name('housePublish.store');
 //view offer
 
 
@@ -55,7 +57,7 @@ Route::group(['middleware' => ['permission:publish post|edit post']], function (
 
 //seller routes
 Route::group(['middleware' => ['permission:create post|edit post']], function () {
-    Route::get('/admin/create/land', [\App\Http\Controllers\PostsController::class, 'create'])->name('create.post');
+    Route::get('/admin/create/land', [\App\Http\Controllers\PostsController::class, 'create'])->name('post.create');
 //    Route::get('/admin/create/house', [\App\Http\Controllers\RentalController::class, 'create'])->name('rentals.create');
 //    Route::post('/rental/store', [\App\Http\Controllers\RentalController::class, 'store'])->name('rentals.store');
     Route::get('/admin/posts/{slug}/edit', [\App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
@@ -72,7 +74,7 @@ Route::group(['middleware' => ['permission:publish post|edit post']], function (
 //    Route::get('/admin/posts', [\App\Http\Controllers\PostsController::class, 'index'])->name('home');
 //    Route::post('/posts/store', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
     Route::resource('admins', \App\Http\Controllers\AdminController::class);
-    Route::resource('publish', \App\Http\Controllers\PublishController::class);
+//    Route::resource('publish', \App\Http\Controllers\PublishController::class);
 
     Route::post('/publish/store', [\App\Http\Controllers\PublishController::class, 'store'])->name('publish.store');
 });

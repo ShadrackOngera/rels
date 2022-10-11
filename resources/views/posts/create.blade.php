@@ -4,7 +4,7 @@
         <div>
             <div class="container">
                 <div class="text-center text-uppercase">
-                    <h1>Create Offer</h1>
+                    <h1>Create Land Offer</h1>
                 </div>
             </div>
         </div>

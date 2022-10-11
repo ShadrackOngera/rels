@@ -32,7 +32,10 @@
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('offers.home') }}">Land Offers</a>
+                            <a class="nav-link" href="{{ route('land.home') }}">Land Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('house.home') }}">Housing Offers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">About Us</a>
@@ -60,7 +63,7 @@
                             <a class="nav-link" href="{{ route('users.all') }}">View Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('publish.index') }}">All Posts</a>
+                            <a class="nav-link" href="{{ route('housePublish.home') }}">All Published Houses Posts</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts.index') }}">View Posts</a>
@@ -70,8 +73,11 @@
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('offers.home') }}">Land Offers</a>
+                        <a class="nav-link" href="{{ route('land.home') }}">Land Offers</a>
                     </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('housePublish.home') }}">Housing Offers</a>
+                        </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('about') }}">About Us</a>
                     </li>

@@ -6,10 +6,15 @@
                 <div>
                     <div class="py-3"></div>
                     <div class="container mb-3 align-self-center">
-                        <div class="position-relative">
-                            <div class="position-absolute top-50 start-50 translate-middle col-sm-4">
-                                <a href="/admin/create" class="btn btn-info text-white w-100">
-                                    New Offer
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{{ route('rentals.create') }}" class="btn btn-info text-white w-100">
+                                    New Housing Offer
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="{{ route('post.create') }}" class="btn btn-info text-white w-100">
+                                    New Land Offer
                                 </a>
                             </div>
                         </div>
@@ -63,7 +68,7 @@
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('publish.store') }}" method="POST" enctype="" class="mb-3">
+                                <form action="{{ route('housePublish.store') }}" method="POST" enctype="" class="mb-3">
                                     @csrf
                                     <input type="hidden" name="house_id" hidden value="{{ $rental->id }}">
                                     <input type="hidden" name="user_name" hidden value="{{ $rental->user->name }}">

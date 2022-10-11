@@ -44,13 +44,13 @@
                 <div class="col-sm-8">
                     <h2 class="fw-bold">Why Us</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quam reprehenderit tempora. At consequatur cumque debitis ducimus earum, esse explicabo iusto magnam magni pariatur perspiciatis quae, ratione sed, ut voluptatum.
+                        Land use is central to addressing sustainability issues, including biodiversity conservation, climate change, food security,
+                        poverty alleviation, and sustainable energy. In this paper, we synthesize knowledge accumulated in land system science, the
+                        integrated study of terrestrial social-ecological systems, into 10 hard truths that have strong, general, empirical support.
+                        These facts help to explain the challenges of achieving sustainability in land use and thus also point toward solutions.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit magnam praesentium voluptatibus.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa debitis eligendi et iusto minima necessitatibus nostrum perspiciatis porro sit.
+                        When looking at land, it is always good to get your builder to have a look, compare it to others for a square metre rate, start by assuming the block is flat and square, then subtract from there for things like slope, trees, irregular shapes etc. This will help you determine a fair market value.
                     </p>
                 </div>
                 <div class="col-sm-4">
@@ -67,10 +67,13 @@
                 <div class="col-sm-8 align-self-center">
                     <h2 class="text-center fw-bold">Why Buy With us</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur distinctio ducimus odit quas tempore voluptatibus. Aspernatur, atque consequuntur cupiditate distinctio id illum itaque non porro qui quod temporibus voluptas.
+                        Before you decide to buy any piece of land, it is important to know the intended purpose of the land i.e. if it is for agricultural, residential, commercial or industrial purposes. The seller should have this information.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae consectetur dicta dolore eos impedit magni officiis sapiente tenetur veritatis! Facilis magnam minus mollitia officiis omnis possimus vero, voluptates voluptatibus. Deleniti eaque id impedit quisquam unde. Dicta dolorum magnam ullam?
+                        Another crucial aspect to look at before buying vacant land is the presence of utilities such as water and electricity or lack thereof. In some areas, the seller has already installed these on the property.
+                    </p>
+                    <p>
+                        You could also add these for yourself at a cost, like digging a borehole. Because most people buy land to build on, knowing this information will help you include some of these costs in your budget for better planning.
                     </p>
                 </div>
             </div>
@@ -107,8 +110,11 @@
                         </div>
                         <div>
                             <h6 class="fw-bold fs-5 mb-2">Search For Offers</h6>
+                            <p class="">
+                                Search For Land Offers on the <a href="{{ route('land.home') }}">Land Offers Page</a>
+                            </p>
                             <p class="mb-0">
-                                Search For Offers on the <a href="{{ route('offers.home') }}">Offers Page</a>
+                                Search For House Offers on the <a href="{{ route('house.home') }}">House Offers Page</a>
                             </p>
                         </div>
                     </div>
@@ -146,8 +152,8 @@
                     </p>
 
                     <div class="d-grid">
-                        <a  href="{{ route('offers.home') }}" class="btn btn-primary">
-                            <span class="me-2">View Offers</span>
+                        <a  href="{{ route('land.home') }}" class="btn btn-primary">
+                            <span class="me-2">View Land Offers</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
@@ -270,7 +276,8 @@
                         Dive right in without the commission fees
                     </p>
 
-                    <a href="{{ route('offers.home') }}" class="btn btn-outline-light">Browse Offers</a>
+                    <a href="{{ route('land.home') }}" class="btn btn-outline-light me-3">Browse Land Offers</a>
+                    <a href="{{ route('house.home') }}" class="btn btn-outline-light">Browse Hosing Offers</a>
                 </div>
             </div>
         </div>
