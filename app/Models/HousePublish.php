@@ -23,4 +23,8 @@ class HousePublish extends Model
         'description',
         'contact',
     ];
+
+    public function rental(){
+        return $this->belongsTo(Rental::class);
+    }
 }

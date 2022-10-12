@@ -114,7 +114,7 @@
                                 Search For Land Offers on the <a href="{{ route('land.home') }}">Land Offers Page</a>
                             </p>
                             <p class="mb-0">
-                                Search For House Offers on the <a href="{{ route('house.home') }}">House Offers Page</a>
+                                Search For House Offers on the <a href="{{ route('housePublish.home') }}">House Offers Page</a>
                             </p>
                         </div>
                     </div>
@@ -277,7 +277,7 @@
                     </p>
 
                     <a href="{{ route('land.home') }}" class="btn btn-outline-light me-3">Browse Land Offers</a>
-                    <a href="{{ route('house.home') }}" class="btn btn-outline-light">Browse Hosing Offers</a>
+                    <a href="{{ route('housePublish.home') }}" class="btn btn-outline-light">Browse Hosing Offers</a>
                 </div>
             </div>
         </div>

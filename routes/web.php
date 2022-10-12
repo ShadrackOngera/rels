@@ -36,6 +36,7 @@ Route::get('/house/offers', [\App\Http\Controllers\HousePublishController::class
 Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 
 Route::post('/house/store', [\App\Http\Controllers\HousePublishController::class, 'store'])->name('housePublish.store');
+Route::delete('/house/{id}/destroy', [\App\Http\Controllers\HousePublishController::class, 'destroy'])->name('housePublish.destroy');
 //view offer
 
 

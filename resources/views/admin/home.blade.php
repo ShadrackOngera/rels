@@ -18,7 +18,7 @@
                     <a class="nav-link" href="{{ route('users.all') }}">View Users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('publish.index') }}">All Posts</a>
+                    <a class="nav-link" href="{{ route('housePublish.home') }}">All Published Houses</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('rentals.home') }}">Unpublished Houses Posts</a>
@@ -31,9 +31,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('land.home') }}">Land Offers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('house.home') }}">Housing Offers</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('about') }}">About Us</a>

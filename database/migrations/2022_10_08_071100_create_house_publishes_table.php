@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('house_publishes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('house_id')->default(1);
-            $table->foreign('house_id')->references('id')->on('rentals')->onDelete('cascade');
+            $table->unsignedBigInteger('rental_id')->default(1);
+            $table->foreign('rental_id')->references('id')->on('rentals')->onDelete('cascade');
             $table->string('user_name');
             $table->string('title');
             $table->string('slug');

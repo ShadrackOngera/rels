@@ -68,25 +68,38 @@
                                 </a>
                             </td>
                             <td>
-                                <form action="{{ route('housePublish.store') }}" method="POST" enctype="" class="mb-3">
-                                    @csrf
-                                    <input type="hidden" name="house_id" hidden value="{{ $rental->id }}">
-                                    <input type="hidden" name="user_name" hidden value="{{ $rental->user->name }}">
-                                    <input type="hidden" name="title" hidden value="{{ $rental->title }}">
-                                    <input type="hidden" name="slug" hidden value="{{ $rental->slug }}">
-                                    <input type="hidden" name="location" hidden value="{{ $rental->location }}">
-                                    <input type="hidden" name="house_type"  hidden value="{{ $rental->house_type }}">
-                                    <input type="hidden" name="price" hidden value="{{ $rental->price }}">
-                                    <input type="hidden" name="time"  hidden value="{{ $rental->time }}">
-                                    <input type="hidden" name="relationship" hidden value="{{ $rental->relationship }}">
-                                    <input type="hidden" name="house_image" hidden value="{{ $rental->house_image }}">
-                                    <textarea name="description" type="hidden" hidden value="{{ $rental->description }}"></textarea>
-                                    <input type="hidden" name="contact" hidden value="{{ $rental->contact }}">
+                                    @if($rental->housePublish()->exists())
+                                            <form action="{{route('housePublish.destroy',$rental->id)}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <div class="d-grid gap-2">
+                                                    <button type="submit" class="btn btn-danger text-white">
+                                                        UnPublish
+                                                    </button>
+                                                </div>
+                                            </form>
+                                    @else
+                                    <form action="{{ route('housePublish.store') }}" method="POST" enctype="" class="mb-3">
+                                        @csrf
+                                        <input type="hidden" name="rental_id" hidden value="{{ $rental->id }}">
+                                        <input type="hidden" name="user_name" hidden value="{{ $rental->user->name }}">
+                                        <input type="hidden" name="title" hidden value="{{ $rental->title }}">
+                                        <input type="hidden" name="slug" hidden value="{{ $rental->slug }}">
+                                        <input type="hidden" name="location" hidden value="{{ $rental->location }}">
+                                        <input type="hidden" name="house_type"  hidden value="{{ $rental->house_type }}">
+                                        <input type="hidden" name="price" hidden value="{{ $rental->price }}">
+                                        <input type="hidden" name="time"  hidden value="{{ $rental->time }}">
+                                        <input type="hidden" name="relationship" hidden value="{{ $rental->relationship }}">
+                                        <input type="hidden" name="house_image" hidden value="{{ $rental->house_image }}">
+                                        <textarea name="description" type="hidden" hidden value="{{ $rental->description }}"></textarea>
+                                        <input type="hidden" name="contact" hidden value="{{ $rental->contact }}">
 
-                                    <button type="submit" class="btn btn-success text-white">
-                                        Publish
-                                    </button>
-                                </form>
+                                        <button type="submit" class="btn btn-success text-white">
+                                            Publish
+                                        </button>
+
+                                    </form>
+                                    @endif
                             </td>
                         @endcan
                     </tr>

@@ -35,7 +35,7 @@
                             <a class="nav-link" href="{{ route('land.home') }}">Land Offers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('house.home') }}">Housing Offers</a>
+                            <a class="nav-link" href="{{ route('housePublish.home') }}">Housing Offers</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('about') }}">About Us</a>

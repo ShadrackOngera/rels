@@ -39,7 +39,7 @@ class HousePublishController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'house_id' => 'required',
+            'rental_id' => 'required',
             'user_name' => 'required',
             'title' => 'required',
             'slug' => ['required','min:1'],
@@ -54,7 +54,7 @@ class HousePublishController extends Controller
         ]);
 
         $housePublish = HousePublish::create([
-            'house_id' => $request->input('house_id'),
+            'rental_id' => $request->input('rental_id'),
             'user_name' => $request->input('user_name'),
             'title' => $request->input('title'),
             'slug' => $request->input('slug'),
@@ -110,10 +110,12 @@ class HousePublishController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        //
+        $post = HousePublish::where('id', $id)->delete();
+
+        return redirect()->back();
     }
 }

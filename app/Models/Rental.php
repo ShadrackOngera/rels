@@ -30,6 +30,11 @@ class Rental extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function housePublish()
+    {
+        return $this->hasOne(HousePublish::class);
+    }
+
     public function sluggable(): array
     {
         return [
