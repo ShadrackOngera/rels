@@ -41,6 +41,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function publish()
+    {
+        return $this->hasOne(Publish::class);
+    }
+
     public function chat(){
         return $this->hasMany(Chat::class);
     }

@@ -96,7 +96,7 @@ class PostsController extends Controller
             'user_id' => auth()->user()->id,
         ]);
 
-        return redirect('/');
+        return redirect()->back();
     }
 
     /**

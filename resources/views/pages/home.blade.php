@@ -277,7 +277,7 @@
                     </p>
 
                     <a href="{{ route('land.home') }}" class="btn btn-outline-light me-3">Browse Land Offers</a>
-                    <a href="{{ route('housePublish.home') }}" class="btn btn-outline-light">Browse Hosing Offers</a>
+                    <a href="{{ route('housePublish.home') }}" class="btn btn-outline-light">Browse Housing Offers</a>
                 </div>
             </div>
         </div>

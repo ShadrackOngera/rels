@@ -9,7 +9,7 @@
                     <div class="container mb-3 align-self-center">
                         <div class="position-relative">
                             <div class="position-absolute top-50 start-50 translate-middle col-sm-4">
-                                <a href="/admin/create" class="btn btn-info text-white w-100">
+                                <a href="{{ route('post.create') }}" class="btn btn-info text-white w-100">
                                     New Offer
                                 </a>
                             </div>
@@ -60,6 +60,17 @@
                                     </a>
                                 </td>
                                 <td>
+                                    @if($post->publish()->exists())
+                                        <form action="{{route('publish.destroy',$post->id)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <div class="d-grid gap-2">
+                                                <button type="submit" class="btn btn-danger text-white">
+                                                    UnPublish
+                                                </button>
+                                            </div>
+                                        </form>
+                                    @else
                                     <form action="{{ route('publish.store') }}" method="POST" enctype="" class="mb-3">
                                         @csrf
                                         <input type="hidden" name="post_id" hidden value="{{ $post->id }}">
@@ -80,6 +91,7 @@
                                             Publish
                                         </button>
                                     </form>
+                                    @endif
                                     </td>
                             @endcan
                         </tr>

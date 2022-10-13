@@ -78,6 +78,7 @@ Route::group(['middleware' => ['permission:publish post|edit post']], function (
 //    Route::resource('publish', \App\Http\Controllers\PublishController::class);
 
     Route::post('/publish/store', [\App\Http\Controllers\PublishController::class, 'store'])->name('publish.store');
+    Route::delete('/land/{id}/destroy', [\App\Http\Controllers\PublishController::class, 'destroy'])->name('publish.destroy');
 });
 
 
