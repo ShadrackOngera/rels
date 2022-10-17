@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div>
+    <div style="min-height: 80vh">
         <div class="container">
             <div class="row">
                 @foreach($rentals as $rental)

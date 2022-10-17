@@ -36,6 +36,7 @@
                         <th scope="col">View Offer</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Publish</th>
+                        <th scope="col">Delete</th>
                     @endcan
                 </tr>
                 </thead>
@@ -93,6 +94,17 @@
                                     </form>
                                     @endif
                                     </td>
+                                <td>
+                                    <form action="{{route('posts.destroy',$post->id)}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <div class="d-grid gap-2">
+                                            <button type="submit" class="btn btn-danger text-white">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </form>
+                                </td>
                             @endcan
                         </tr>
                     @endforeach

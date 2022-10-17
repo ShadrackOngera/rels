@@ -17,12 +17,12 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
+    <div id="back">
                 <section>
             @include('partials.nav')
         </section>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
