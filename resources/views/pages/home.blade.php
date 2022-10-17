@@ -214,7 +214,7 @@
                             </div>
                         </div>
 
-                        <div class="card shadow mb-3">
+                        <div class="card shadow mb-3" id="back">
                             <div class="card-body d-flex p-4">
                                 <div class="">
                                     <p>
@@ -300,6 +300,7 @@
                 </div>
             </div>
         </div>
+        <hr class="my-0">
     </div>
     <script>
         function lightTheme() {

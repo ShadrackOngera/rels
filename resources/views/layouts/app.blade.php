@@ -18,8 +18,12 @@
 </head>
 <body>
     <div id="back">
-                <section>
+        <section>
             @include('partials.nav')
+        </section>
+
+        <section>
+            @include('partials.theme')
         </section>
 
         <main class="">
