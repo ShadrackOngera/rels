@@ -79,25 +79,25 @@
                                                 </div>
                                             </form>
                                     @else
-                                        <form action="{{ route('housePublish.store') }}" method="POST" enctype="" class="mb-3">
+                                        <form action="{{ route('housePublish.store') }}" method="POST" class="mb-3">
                                             @csrf
-                                            <input type="hidden" name="rental_id" hidden value="{{ $rental->id }}">
-                                            <input type="hidden" name="user_name" hidden value="{{ $rental->user->name }}">
-                                            <input type="hidden" name="title" hidden value="{{ $rental->title }}">
-                                            <input type="hidden" name="slug" hidden value="{{ $rental->slug }}">
-                                            <input type="hidden" name="location" hidden value="{{ $rental->location }}">
-                                            <input type="hidden" name="house_type"  hidden value="{{ $rental->house_type }}">
-                                            <input type="hidden" name="price" hidden value="{{ $rental->price }}">
-                                            <input type="hidden" name="time"  hidden value="{{ $rental->time }}">
-                                            <input type="hidden" name="relationship" hidden value="{{ $rental->relationship }}">
-                                            <input type="hidden" name="house_image" hidden value="{{ $rental->house_image }}">
+
+                                            <input type="text" name="rental_id" hidden value="{{ $rental->id }}">
+                                            <input type="text" name="user_name" hidden value="{{ $rental->user->name }}">
+                                            <input type="text" name="title" hidden value="{{ $rental->title }}">
+                                            <input type="text" name="slug" hidden value="{{ $rental->slug }}">
+                                            <input type="text" name="location" hidden value="{{ $rental->location }}">
+                                            <input type="text" name="house_type"  hidden value="{{ $rental->house_type }}">
+                                            <input type="number" name="price" hidden value="{{ $rental->price }}">
+                                            <input type="text" name="time"  hidden value="{{ $rental->time }}">
+                                            <input type="text" name="relationship" hidden value="{{ $rental->relationship }}">
+                                            <input type="text" name="house_image" hidden value="{{ $rental->house_image }}">
                                             <textarea name="description" type="hidden" hidden value="{{ $rental->description }}"></textarea>
-                                            <input type="hidden" name="contact" hidden value="{{ $rental->contact }}">
+                                            <input type="text" name="contact" hidden value="{{ $rental->contact }}">
 
                                             <button type="submit" class="btn btn-success text-white">
                                                 Publish
                                             </button>
-
                                         </form>
                                     @endif
                             </td>

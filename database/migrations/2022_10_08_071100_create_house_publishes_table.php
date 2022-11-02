@@ -17,17 +17,17 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('rental_id')->default(1);
             $table->foreign('rental_id')->references('id')->on('rentals')->onDelete('cascade');
-            $table->string('user_name');
-            $table->string('title');
-            $table->string('slug');
-            $table->string('location');
-            $table->string('house_type');
-            $table->integer('price');
-            $table->string('time');
-            $table->string('relationship');
-            $table->string('house_image');
-            $table->text('description');
-            $table->string('contact');
+            $table->string('user_name')->nullable();
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('location')->nullable();
+            $table->string('house_type')->nullable();
+            $table->integer('price')->nullable();
+            $table->string('time')->nullable();
+            $table->string('relationship')->nullable();
+            $table->string('house_image')->nullable();
+            $table->text('description')->nullable();
+            $table->string('contact')->nullable();
             $table->timestamps();
         });
     }

@@ -34,24 +34,25 @@ class HousePublishController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'rental_id' => 'required',
-            'user_name' => 'required',
-            'title' => 'required',
-            'slug' => ['required','min:1'],
-            'location' => 'required',
-            'house_type' => 'required',
-            'price' => 'required',
-            'time' => 'required',
-            'relationship' => 'required',
-            'house_image' => 'required',
-            'description' => 'required',
-            'contact' => 'required',
-        ]);
+//        $request->validate([
+//            'rental_id' => 'required',
+//            'user_name' => 'required',
+//            'title' => 'required',
+//            'slug' => ['required','min:1'],
+//            'location' => 'required',
+//            'house_type' => 'required',
+//            'price' => 'required',
+//            'time' => 'required',
+//            'relationship' => 'required',
+//            'house_image' => 'required',
+//            'description' => 'required',
+//            'contact' => 'required',
+//        ]);
+
 
         $housePublish = HousePublish::create([
             'rental_id' => $request->input('rental_id'),

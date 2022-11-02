@@ -22,7 +22,7 @@
             <div class="col-sm-6">
                 <div class="card">
                     <h5 class="fw-bold text-center">House Image</h5>
-                    <img src="{{ asset('storage/'.$rental->house_image) }}" alt="Title-Deed" class="img-fluid">
+                    <img src="{{ asset('storage/'.$rental->house_image) }}" alt="House Image" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
         <div class="mb-3">
             <div class="card">
                 <div class="card-header text-center h3 fw-bold">Photo</div>
-                <img src="{{ asset('storage/'.$rental->house_image) }}" alt="Title-Deed" class="img-fluid">
+                <img src="{{ asset('storage/'.$rental->house_image) }}" alt="House Image" class="img-fluid">
             </div>
         </div>
 

@@ -10,7 +10,7 @@ class HousePublish extends Model
     use HasFactory;
 
     protected $fillable = [
-        'house_id',
+        'rental_id',
         'user_name',
         'title',
         'slug',

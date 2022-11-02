@@ -28,7 +28,7 @@
                                         </div>
                                     @else
                                         <div class="col-sm-6 align-self-center">
-                                            <img src="{{ asset('storage/'.$rental->house_image) }}" alt="Title-Deed" class="img-fluid w-100 rounded-2">
+                                            <img src="{{ asset('storage/'.$rental->house_image) }}" alt="House Image" class="img-fluid w-100 rounded-2">
                                         </div>
                                     @endif
                                 </div>
