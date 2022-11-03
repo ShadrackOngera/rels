@@ -1,5 +1,14 @@
 @extends('layouts.app')
 @section('content')
+    <div class="container">
+        <div class="align-items-center">
+            @if (\Session::has('message'))
+                <div class="alert alert-success">
+                    {!! \Session::get('message') !!}
+                </div>
+            @endif
+        </div>
+    </div>
     @can('create post')
         <div>
             <div class="container">

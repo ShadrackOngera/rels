@@ -17,7 +17,7 @@
                     </div>
                     <div class="py-3"></div>
                 </div>
-                @endcan
+            @endcan
         </div>
     </div>
 

@@ -69,7 +69,8 @@ class RentalController extends Controller
             'user_id' => auth()->user()->id,
         ]);
 
-        return redirect('/');
+        $message = 'Success!! Your post has been sent For Review';
+        return redirect()->back()->with('message', $message);
     }
 
     /**

@@ -1,6 +1,21 @@
 @extends('layouts.app')
 @section('content')
     <div style="min-height: 80vh">
+        @can('create post')
+            <div>
+                <div class="py-3"></div>
+                <div class="container mb-3 align-self-center">
+                    <div class="position-relative">
+                        <div class="position-absolute top-50 start-50 translate-middle col-sm-4">
+                            <a href="{{ route('rentals.create') }}" class="btn btn-info text-white w-100">
+                                New House Offer
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-3"></div>
+            </div>
+        @endcan
         <div class="container">
             <div class="row">
                 @foreach($rentals as $rental)
