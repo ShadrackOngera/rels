@@ -36,22 +36,23 @@ class PublishController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'post_id' => 'required',
-            'user_name' => 'required',
-            'title' => 'required',
-            'slug' => 'required',
-            'location' => 'required',
-            'size' => 'required',
-            'price' => ['required','min:1'],
-            'type' => 'required',
-            'deed' => 'required',
-            'deed_img' => '',
-            'land_img' => '',
-            'contact' => '',
-            'description' => 'required',
-        ]);
-
+//        $request->validate([
+//            'post_id' => 'required',
+//            'user_name' => 'required',
+//            'title' => 'required',
+//            'slug' => 'required',
+//            'location' => 'required',
+//            'size' => 'required',
+//            'price' => ['required','min:1'],
+//            'type' => 'required',
+//            'deed' => 'required',
+//            'deed_img' => '',
+//            'land_img' => '',
+//            'contact' => '',
+//            'description' => 'required',
+//        ]);
+//
+//        return $request;
 
 //        dd($request);
 

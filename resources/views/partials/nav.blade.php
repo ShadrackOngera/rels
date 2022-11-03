@@ -63,9 +63,6 @@
                             <a class="nav-link" href="{{ route('users.all') }}">View Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('housePublish.home') }}">All Published Houses Posts</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts.index') }}">View Posts</a>
                         </li>
                     @endcan
