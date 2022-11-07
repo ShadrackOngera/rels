@@ -89,6 +89,18 @@ class HousePublishFilterController extends Controller
         return view('rental.offers')->with('rentals' , $filters);
     }
 
+    public function twoMillionGreater(){
+
+        $query = HousePublish::where('price', '>', 2000000);
+
+
+
+        $filters = QueryBuilder::for($query)
+            ->get();
+
+        return view('rental.offers')->with('rentals' , $filters);
+    }
+
     public function myPosts(){
 
         $query = HousePublish::where('user_name', auth()->user()->name);

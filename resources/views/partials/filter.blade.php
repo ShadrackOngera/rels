@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('two.mill') }}">1,500,000 - 2,000,000</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('two.mill.greater') }}">More than 2,000,000</a>
+                    </li>
                     @can('create post')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('my.posts') }}">My Posts</a>

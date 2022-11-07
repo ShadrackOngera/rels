@@ -28,6 +28,7 @@ Route::get('/land/offers.filters/700k', [\App\Http\Controllers\FiltersController
 Route::get('/land/offers/filters/1-million', [\App\Http\Controllers\FiltersController::class, 'oneMillion'])->name('one.mill');
 Route::get('/land/offers/filters/1.5-million', [\App\Http\Controllers\FiltersController::class, 'onePointFiveMillion'])->name('one.point');
 Route::get('/land/offers/filters/two-million', [\App\Http\Controllers\FiltersController::class, 'twoMillion'])->name('two.mill');
+Route::get('/land/offers/filters/greater-two-million', [\App\Http\Controllers\FiltersController::class, 'twoMillionGreater'])->name('two.mill.greater');
 Route::get('/land/offers/filters/my-posts', [\App\Http\Controllers\FiltersController::class, 'myPosts'])->name('my.posts');
 
 
@@ -38,6 +39,7 @@ Route::get('/house/offers.filters/700k', [\App\Http\Controllers\HousePublishFilt
 Route::get('/house/offers/filters/1-million', [\App\Http\Controllers\HousePublishFilterController::class, 'oneMillion'])->name('one.mill.h');
 Route::get('/house/offers/filters/1.5-million', [\App\Http\Controllers\HousePublishFilterController::class, 'onePointFiveMillion'])->name('one.point.h');
 Route::get('/house/offers/filters/two-million', [\App\Http\Controllers\HousePublishFilterController::class, 'twoMillion'])->name('two.mill.h');
+Route::get('/house/offers/filters/greater-two-million', [\App\Http\Controllers\HousePublishFilterController::class, 'twoMillionGreater'])->name('two.mill.greater.h');
 Route::get('/house/offers/filters/my-posts', [\App\Http\Controllers\HousePublishFilterController::class, 'myPosts'])->name('my.posts.h');
 
 

@@ -101,5 +101,17 @@ class FiltersController extends Controller
         return view('publish.home')->with('publishes' , $filters);
     }
 
+    public function twoMillionGreater(){
+
+        $query = Publish::where('price', '>', 2000000);
+
+
+
+        $filters = QueryBuilder::for($query)
+            ->get();
+
+        return view('publish.home')->with('publishes' , $filters);
+    }
+
 
 }
