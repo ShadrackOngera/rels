@@ -21,10 +21,19 @@
                 <h5>Title Deed: <strong>{{ $post->deed }}</strong></h5>
             </div>
             <div class="col-sm-6">
-                <div class="card">
-                    <h5 class="fw-bold">Title Deed Image</h5>
-                    <img src="{{ asset('storage/'.$post->deed_img) }}" alt="Title-Deed" class="img-fluid">
-                </div>
+                @if($post->deed == 'no')
+                    <div class="card">
+                        <h5 class="fw-bold">Title Deed Image</h5>
+                        <p class="text-danger">
+                            This Post Has No Deed Image
+                        </p>
+                    </div>
+                @else
+                    <div class="card">
+                        <h5 class="fw-bold">Title Deed Image</h5>
+                        <img src="{{ asset('storage/'.$post->deed_img) }}" alt="Title-Deed" class="img-fluid">
+                    </div>
+                @endif
             </div>
         </div>
 
