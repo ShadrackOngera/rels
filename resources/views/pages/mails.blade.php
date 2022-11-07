@@ -19,7 +19,7 @@
                 </tbody>
             </table>
 
-            <a href="{{ route('export.mails') }}">Export to pdf</a>
+            <a href="{{ route('export.mails') }}" class="btn btn-primary">Export to pdf</a>
         </div>
     </div>
 @endsection

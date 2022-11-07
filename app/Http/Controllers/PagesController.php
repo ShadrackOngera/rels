@@ -41,13 +41,13 @@ class PagesController extends Controller
 
     public function exportPdf(){
 
-        $results = MailingList::orderBy('updated_at', 'DESC')->where('user_id', auth()->user()->id)->get();
-        $pdf = Pdf::loadView('student.pdf',
+        $mails = MailingList::orderBy('updated_at', 'DESC')->get();
+        $pdf = Pdf::loadView('partials.pdf',
             [
-                'results'=>$results,
+                'mails'=>$mails,
             ]);
 
-        return $pdf->download('results.pdf');
+        return $pdf->download('mails.pdf');
     }
 
     public function dashboardPage(){
