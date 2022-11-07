@@ -43,18 +43,17 @@
             </div>
         </div>
         <div>
-            <div class="card shadow mb-3">
-                <div class="card-body">
-{{--                    {{ $post->chat }}--}}
-                    <div class="card-header">
-                        <h3 class="text-center">
-                            Have a Question? Directly ask the Seller Here
-                        </h3>
-                        <p class="text-muted text-center">This Chat can only be seen by you and the Seller</p>
-                    </div>
+            @if(auth()->user()->id == $post->user_id)
+                <div class="card shadow mb-3">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <h3 class="text-center">
+                                Reply Directly to Questions from Buyers
+                            </h3>
+                            <p class="text-muted text-center">This Chat can only be seen by you and the Buyer</p>
+                        </div>
 
-                    @foreach($post->chat as $chat)
-{{--                        @if(($post->user->id) && (auth()->user()->id  === $post->chat->user_id))--}}
+                        @foreach($post->chat as $chat)
                             <div class="mb-0">
                                 @if($chat->user_id == $post->user_id)
                                     <span class="float-end fw-bold text-muted">
@@ -66,10 +65,35 @@
                                     </span>
                                 @endif
                             </div><br>
-{{--                        @endif--}}
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            </div>
+            @else
+                <div class="card shadow mb-3">
+                    <div class="card-body">
+                        <div class="card-header">
+                            <h3 class="text-center">
+                                Have a Question? Directly ask the Seller Here
+                            </h3>
+                            <p class="text-muted text-center">This Chat can only be seen by you and the Seller</p>
+                        </div>
+
+                        @foreach($post->chat as $chat)
+                            <div class="mb-0">
+                                @if($chat->user_id == $post->user_id)
+                                    <span class="float-end fw-bold text-muted">
+                                        {{ $chat->message }}
+                                    </span>
+                                @else
+                                    <span class="">
+                                        {{ $chat->message }}
+                                    </span>
+                                @endif
+                            </div><br>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
         </div>
 
         <form action="{{ route('chats.store') }}" method="POST">
