@@ -16,6 +16,14 @@
                 <div class="py-3"></div>
             </div>
         @endcan
+
+        <div>
+            <div class="container">
+                <section>
+                    @include('partials.houseFilter')
+                </section>
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 @foreach($rentals as $rental)

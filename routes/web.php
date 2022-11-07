@@ -21,13 +21,23 @@ Route::post('/store-contact', [\App\Http\Controllers\PagesController::class, 'st
 
 
 //Pages Filters
-Route::get('/offers/filters/100k', [\App\Http\Controllers\FiltersController::class, 'hundredThousand'])->name('hundred');
-Route::get('/offers/filters/300k', [\App\Http\Controllers\FiltersController::class, 'threeHundredThousand'])->name('three.hundred');
-Route::get('/offers.filters/700k', [\App\Http\Controllers\FiltersController::class, 'sevenHundredThousand'])->name('seven.hundred');
-Route::get('/offers/filters/1-million', [\App\Http\Controllers\FiltersController::class, 'oneMillion'])->name('one.mill');
-Route::get('/offers/filters/1.5-million', [\App\Http\Controllers\FiltersController::class, 'onePointFiveMillion'])->name('one.point');
-Route::get('/offers/filters/two-million', [\App\Http\Controllers\FiltersController::class, 'twoMillion'])->name('two.mill');
-Route::get('/offers/filters/my-posts', [\App\Http\Controllers\FiltersController::class, 'myPosts'])->name('my.posts');
+Route::get('/land/offers/filters/100k', [\App\Http\Controllers\FiltersController::class, 'hundredThousand'])->name('hundred');
+Route::get('/land/offers/filters/300k', [\App\Http\Controllers\FiltersController::class, 'threeHundredThousand'])->name('three.hundred');
+Route::get('/land/offers.filters/700k', [\App\Http\Controllers\FiltersController::class, 'sevenHundredThousand'])->name('seven.hundred');
+Route::get('/land/offers/filters/1-million', [\App\Http\Controllers\FiltersController::class, 'oneMillion'])->name('one.mill');
+Route::get('/land/offers/filters/1.5-million', [\App\Http\Controllers\FiltersController::class, 'onePointFiveMillion'])->name('one.point');
+Route::get('/land/offers/filters/two-million', [\App\Http\Controllers\FiltersController::class, 'twoMillion'])->name('two.mill');
+Route::get('/land/offers/filters/my-posts', [\App\Http\Controllers\FiltersController::class, 'myPosts'])->name('my.posts');
+
+
+//House Filters
+Route::get('/house/offers/filters/100k', [\App\Http\Controllers\HousePublishFilterController::class, 'hundredThousand'])->name('hundred.h');
+Route::get('/house/offers/filters/300k', [\App\Http\Controllers\HousePublishFilterController::class, 'threeHundredThousand'])->name('three.hundred.h');
+Route::get('/house/offers.filters/700k', [\App\Http\Controllers\HousePublishFilterController::class, 'sevenHundredThousand'])->name('seven.hundred.h');
+Route::get('/house/offers/filters/1-million', [\App\Http\Controllers\HousePublishFilterController::class, 'oneMillion'])->name('one.mill.h');
+Route::get('/house/offers/filters/1.5-million', [\App\Http\Controllers\HousePublishFilterController::class, 'onePointFiveMillion'])->name('one.point.h');
+Route::get('/house/offers/filters/two-million', [\App\Http\Controllers\HousePublishFilterController::class, 'twoMillion'])->name('two.mill.h');
+Route::get('/house/offers/filters/my-posts', [\App\Http\Controllers\HousePublishFilterController::class, 'myPosts'])->name('my.posts.h');
 
 
 //all publish
