@@ -37,7 +37,7 @@
 
             <ul>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.home') }}">Admin Home</a>
+                    <a class="nav-link" href="{{ route('mails') }}">Mails</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('users.all') }}">View Users</a>

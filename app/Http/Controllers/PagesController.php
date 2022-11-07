@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PagesController extends Controller
 {
@@ -29,6 +30,24 @@ class PagesController extends Controller
         //show About page
 
         return view('pages.about');
+    }
+
+    public function mailsPage(){
+        //show Mails page
+
+        $mails = MailingList::orderBy('created_at' , 'ASC')->paginate(20);
+        return view('pages.mails')->with('mails', $mails);
+    }
+
+    public function exportPdf(){
+
+        $results = MailingList::orderBy('updated_at', 'DESC')->where('user_id', auth()->user()->id)->get();
+        $pdf = Pdf::loadView('student.pdf',
+            [
+                'results'=>$results,
+            ]);
+
+        return $pdf->download('results.pdf');
     }
 
     public function dashboardPage(){

@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\PagesController::class, 'homePage'])->name('home');
 Route::get('/contact', [\App\Http\Controllers\PagesController::class, 'contactPage'])->name('contact');
 Route::get('/dashboard', [\App\Http\Controllers\PagesController::class, 'dashboardPage'])->name('dashboard');
+Route::get('/mails', [\App\Http\Controllers\PagesController::class, 'mailsPage'])->name('mails');
+Route::get('/mails/export', [App\Http\Controllers\PagesController::class, 'exportPdf'])->name('export.mails');
 Route::get('/about-us', [\App\Http\Controllers\PagesController::class, 'aboutPage'])->name('about');
 Route::post('/store-mail', [\App\Http\Controllers\PagesController::class, 'storeEmails'])->name('store.mail');
 Route::post('/store-contact', [\App\Http\Controllers\PagesController::class, 'storeContact'])->name('store.contact');
