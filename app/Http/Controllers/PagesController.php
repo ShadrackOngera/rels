@@ -30,6 +30,12 @@ class PagesController extends Controller
 
         return view('pages.about');
     }
+
+    public function dashboardPage(){
+        //show Dashboard page
+
+        return view('pages.dashboard');
+    }
     public function storeEmails(Request $request){
         //store Mailing list
         $request->validate([
