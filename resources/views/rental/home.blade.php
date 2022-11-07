@@ -38,6 +38,7 @@
                     <th scope="col">Time</th>
                     <th scope="col">Posted By</th>
                     <th scope="col">Relationship</th>
+                    <th scope="col">Payment Code</th>
                     @can('publish post')
                         <th scope="col">View Offer</th>
                         <th scope="col">Edit</th>
@@ -56,6 +57,7 @@
                         <td>{{ $rental->time }}</td>
                         <td>{{ $rental->user->name }}</td>
                         <td>{{ $rental->relationship }}</td>
+                        <td>{{ $rental->code }}</td>
                         @can('publish post')
                             <td>
                                 <a href="{{ route('rentals.show', $rental->slug)  }}" class="btn btn-outline-primary">

@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('house_image');
             $table->string('description');
             $table->string('contact');
+            $table->string('code');
             $table->timestamps();
         });
     }

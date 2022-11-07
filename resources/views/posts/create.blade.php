@@ -60,6 +60,11 @@
                     <label for="floatingInput">Contact</label>
                 </div>
 
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="code" placeholder="Payment Code" required>
+                    <label for="floatingInput">Your Payment Code</label>
+                </div>
+
                 <div class="d-grid gap-2 mb-3">
                     <button type="submit" class="btn btn-success text-white">
                         Submit

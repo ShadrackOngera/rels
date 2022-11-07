@@ -25,6 +25,7 @@ class Post extends Model
         'contact',
         'description',
         'user_id',
+        'code',
     ];
 
     public $appends =['deed_img_url'];

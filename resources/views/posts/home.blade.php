@@ -32,6 +32,7 @@
                     <th scope="col">Posted By</th>
                     <th scope="col">Price</th>
                     <th scope="col">Contact</th>
+                    <th scope="col">Payment Code</th>
                     @can('publish post')
                         <th scope="col">View Offer</th>
                         <th scope="col">Edit</th>
@@ -49,6 +50,7 @@
                             <td>{{ $post->user->name }}</td>
                             <td>{{ number_format($post->price) }}</td>
                             <td>{{ $post->contact }}</td>
+                            <td>{{ $post->code }}</td>
                             @can('publish post')
                                 <td>
                                     <a href="{{ route('posts.show', $post->slug)  }}" class="btn btn-outline-primary">

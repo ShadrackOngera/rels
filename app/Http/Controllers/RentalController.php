@@ -51,6 +51,7 @@ class RentalController extends Controller
             'house_image' => '',
             'description' => 'required',
             'contact' => 'required',
+            'code' => 'required',
         ]);
 
 
@@ -66,6 +67,7 @@ class RentalController extends Controller
             'house_image' => $house_path,
             'description' => $request->input('description'),
             'contact' => $request->input('contact'),
+            'code' => $request->input('code'),
             'user_id' => auth()->user()->id,
         ]);
 

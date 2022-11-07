@@ -23,6 +23,7 @@ class Rental extends Model
         'house_image',
         'description',
         'contact',
+        'code',
     ];
 
 

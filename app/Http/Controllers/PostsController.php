@@ -62,8 +62,9 @@ class PostsController extends Controller
             'deed' => 'required',
             'deed_img' => '',
             'land_img' => '',
-            'contact' => 'required',
             'description' => 'required',
+            'contact' => 'required',
+            'code' => 'required',
         ]);
 
 
@@ -93,6 +94,7 @@ class PostsController extends Controller
             'land_img' => $land_path,
             'contact' => $request->input('contact'),
             'description' => $request->input('description'),
+            'code' => $request->input('code'),
             'user_id' => auth()->user()->id,
         ]);
 
