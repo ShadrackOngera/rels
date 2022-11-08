@@ -50,13 +50,22 @@ Route::get('/land/offers', [\App\Http\Controllers\PublishController::class, 'ind
 Route::get('/house/offers', [\App\Http\Controllers\HousePublishController::class, 'index'])->name('housePublish.home');
 Route::get('/posts/{slug}', [\App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 
+Route::get('/house/{slug}/show', [\App\Http\Controllers\RentalController::class, 'show'])->name('rentals.show');
+
 Route::post('/house/store', [\App\Http\Controllers\HousePublishController::class, 'store'])->name('housePublish.store');
 Route::delete('/house/{id}/destroy', [\App\Http\Controllers\HousePublishController::class, 'destroy'])->name('housePublish.destroy');
 //view offer
 
 
+//house chat routes
+Route::post('/house/store/chats', [\App\Http\Controllers\HouseChatController::class, 'store'])->name('houseChats.store');
+//Route::resource('HouseChats', \App\Http\Controllers\HouseChatsController::class);
+
+
+
 
 Route::resource('chats', \App\Http\Controllers\ChatsController::class);
+Route::resource('rentals', \App\Http\Controllers\RentalController::class);
 
 //admin routes
 Route::group(['middleware' => ['permission:publish post|edit post']], function () {
@@ -81,7 +90,13 @@ Route::group(['middleware' => ['permission:create post|edit post']], function ()
 //    Route::post('/posts/store', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
 //    Route::post('/update', [\App\Http\Controllers\PostsController::class, 'update'])->name('posts.update');
     Route::resource('posts', \App\Http\Controllers\PostsController::class);
-    Route::resource('rentals', \App\Http\Controllers\RentalController::class);
+
+
+
+//    Route::get('/house/create', [\App\Http\Controllers\RentalController::class, 'create'])->name('rentals.create');
+//    Route::delete('/house/{slug}/destroy', [\App\Http\Controllers\RentalController::class, 'destroy'])->name('rentals.destroy');
+//    Route::post('/house/store', [\App\Http\Controllers\RentalController::class, 'store'])->name('rentals.store');
+//    Route::post('/house/store', [\App\Http\Controllers\RentalController::class, 'create'])->name('rentals.store');
 });
 
 //moderator routes

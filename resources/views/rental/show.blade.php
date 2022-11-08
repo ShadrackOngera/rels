@@ -42,6 +42,70 @@
             </div>
         </div>
 
+        <div>
+            <div>
+                @if(auth()->user()->id == $rental->user_id)
+                    <div class="card shadow mb-3">
+                        <div class="card-body">
+                            <div class="card-header">
+                                <h3 class="text-center">
+                                    Reply Directly to Questions from Buyers
+                                </h3>
+                                <p class="text-muted text-center">This Chat can only be seen by you and the Buyer</p>
+                            </div>
+                            @foreach($rental->houseChat as $chat)
+                                <div class="mb-0">
+                                    @if($chat->user_id == $rental->user_id)
+                                        <span class="float-end fw-bold text-muted">
+                                        {{ $chat->message }}
+                                    </span>
+                                    @else
+                                        <span class="">
+                                        {{ $chat->message }}
+                                    </span>
+                                    @endif
+                                </div><br>
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <div class="card shadow mb-3">
+                        <div class="card-body">
+                            <div class="card-header">
+                                <h3 class="text-center">
+                                    Have a Question? Directly ask the Seller Here
+                                </h3>
+                                <p class="text-muted text-center">This Chat can only be seen by you and the Seller</p>
+                            </div>
+
+                            @foreach($rental->houseChat as $chat)
+                                <div class="mb-0">
+                                    @if($chat->user_id == $rental->user_id)
+                                        <span class="float-end fw-bold text-muted">
+                                        {{ $chat->message }}
+                                    </span>
+                                    @else
+                                        <span class="">
+                                        {{ $chat->message }}
+                                    </span>
+                                    @endif
+                                </div><br>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
+            </div>
+
+            <form action="{{ route('houseChats.store') }}" method="POST">
+                @csrf
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Input text here" aria-label="Recipient's username" name="message" aria-describedby="button-addon2">
+                    <input type="hidden" name="rental_id" value="{{ $rental->id }}">
+                    <button class="btn btn-outline-secondary text-indigo" type="submit" id="button-addon2">Submit</button>
+                </div>
+            </form>
+        </div>
+
         <div class="d-grid gap-2 col-6 mx-auto mb-3">
             <a href="{{ route('home') }}" class="btn btn-info text-white">Back</a>
         </div>

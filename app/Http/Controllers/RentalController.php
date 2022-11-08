@@ -86,7 +86,11 @@ class RentalController extends Controller
 
 
         //->with('chat')->firstOrFail();
-        $rental = Rental::where('slug', $slug)->firstOrFail();
+//        $post = Post::where('slug', $slug)->with('chat')->firstOrFail();
+//        return view('posts.show')->with('post', $post);
+
+
+        $rental = Rental::where('slug', $slug)->with('houseChat')->firstOrFail();
         return view('rental.show')->with('rental', $rental);
     }
 

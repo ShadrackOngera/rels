@@ -17,6 +17,10 @@
                 </div>
             </div>
         </div>
+        <div class="text-center">
+            <h1>For your post to be published, You have to pay to the Mpesa till below <span class="fw-bold">(5870505)</span></h1>
+            <img src="{{ asset('images/pics/till.jpg') }}" alt="5870505" class="img-fluid">
+        </div>
         <div class="container">
             <form action="{{ route('rentals.store') }}" method="POST" enctype="multipart/form-data" class="mb-3">
                 @csrf
@@ -65,6 +69,7 @@
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput" name="code" placeholder="Payment Code" required>
                     <label for="floatingInput">Your Payment Code</label>
+                    <small class="form-text">The Expected Payment Code is from M-pesa</small>
                 </div>
 
                 <div class="d-grid gap-2 mb-3">

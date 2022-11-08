@@ -36,6 +36,10 @@ class Rental extends Model
         return $this->hasOne(HousePublish::class);
     }
 
+    public function houseChat(){
+        return $this->hasMany(HouseChat::class);
+    }
+
     public function sluggable(): array
     {
         return [
